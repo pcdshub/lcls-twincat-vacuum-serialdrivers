@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5b4a8aa2-6a3a-4ec2-b51e-c0f5c0b99baa}</ProjectGuid>
+    <Name>LCLSVacuumSerialDriverLib</Name>
+    <ProgramVersion>3.1.0.9</ProgramVersion>
+    <Application>{9755a209-d338-442f-bdfb-139e20fc0637}</Application>
+    <TypeSystem>{75ab46d1-3b12-4e0e-b304-66c741c0a1d5}</TypeSystem>
+    <Implicit_Task_Info>{3671378d-b671-4002-86b4-b413cf4705ec}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{ec041d0b-fe81-4dc2-8d5a-a523464db2c2}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{7fc547e7-55bd-4be9-bfad-44c5444f3846}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{8da44080-7753-4c76-a5cd-f8851b391d8e}</LibraryReferences>
+    <Company>SLAC</Company>
+    <Title>LCLSVacuumSerialDriverLib</Title>
+    <Author>Alex Wallace</Author>
+    <Description>Took the drivers from 1.0.7 vacuum lib and split them off.
+
+0.3.3 Trying out placeholders
+1.0.0 Out of beta, also, added export of error and warning codes for pfeiffer pumps
+1.0.1 clear_status bug in pfeiffer pump communications, should work now</Description>
+    <Released>true</Released>
+    <CombineIds>false</CombineIds>
+    <ProjectVersion>1.1.4</ProjectVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DUTs\LVDT\ST_SerLVC4000.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\Oerlikon\ST_TD20Status.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\Pfeiffer\ST_PfeifferControl.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="DUTs\Pfeiffer\ST_PfeifferStatus.TcDUT">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="GVLs\GVL_MacroSensorsParameters.TcGVL">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="GVLs\GVL_PfeifferParameters.TcGVL">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+      <LinkAlways>True</LinkAlways>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\LVDT\MacroSensors\FB_LVC4000SerialDriver.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\LVDT\MacroSensors\FB_LVC4000Transaction.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\LVDT\MacroSensors\FB_LVC4000Com.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD20\FB_OERLIKON_TD20_COM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD20\FB_OERLIKON_TO_PTM.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD20\FB_TD20SerialDriver.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD20\FB_TD20Transaction.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD20\F_CalcTD20Checksum.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Pfeiffer\FB_PfeifferSerialDriver.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Pfeiffer\FB_PfeifferTransaction.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Pfeiffer\FB_PFEIFFER_COM.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Pfeiffer\FB_PFEIFFER_TO_PTM.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Pfeiffer\F_CalcPfeifferCheckSum.TcPOU">
+      <SubType>Code</SubType>
+      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="Version\Global_Version.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DUTs" />
+    <Folder Include="DUTs\LVDT" />
+    <Folder Include="DUTs\Oerlikon" />
+    <Folder Include="DUTs\Pfeiffer" />
+    <Folder Include="GVLs" />
+    <Folder Include="POUs\Serial drivers" />
+    <Folder Include="POUs\Serial drivers\LVDT" />
+    <Folder Include="POUs\Serial drivers\LVDT\MacroSensors" />
+    <Folder Include="POUs\Serial drivers\Pumps" />
+    <Folder Include="POUs\Serial drivers\Pumps\Oerlikon TD20" />
+    <Folder Include="POUs\Serial drivers\Pumps\Pfeiffer" />
+    <Folder Include="Version" />
+    <Folder Include="VISUs" />
+    <Folder Include="POUs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="L2SI Vacuum Library">
+      <DefaultResolution>L2SI Vacuum Library, * (SLAC)</DefaultResolution>
+      <Namespace>L2SI_Vacuum_Library</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_SerialCom">
+      <DefaultResolution>Tc2_SerialCom, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_SerialCom</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Interfaces">
+      <DefaultResolution>Tc3_Interfaces, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Interfaces</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Module">
+      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Module</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LCLSVacuumSerialDriverLib.tmc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="L2SI Vacuum Library">
+      <Resolution>L2SI Vacuum Library, * (SLAC)</Resolution>
+    </PlaceholderResolution>
+  </ItemGroup>
+  <ProjectExtensions>
+    <PlcProjectOptions>
+      <XmlArchive>
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
+      <v n="Name">"&lt;ProjectRoot&gt;"</v>
+      <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+        <v>{FE9F63D4-9E34-43ce-9322-D46747A00F33}</v>
+        <o>
+          <v n="Name">"{FE9F63D4-9E34-43ce-9322-D46747A00F33}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String">
+            <v>SourceDownloadContent</v>
+            <v>1</v>
+            <v>SourceDownloadContent2</v>
+            <a cet="Guid">
+              <v>b0b53f83-af78-49aa-8133-0063f476bd7c</v>
+            </a>
+          </d>
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
+        <o>
+          <v n="Name">"{29BD8D0C-3586-4548-BB48-497B9A01693F}"</v>
+          <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+            <v>Rules</v>
+            <o>
+              <v n="Name">"Rules"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+          </d>
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
+        <o>
+          <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>ActiveVisuProfile</v>
+            <v>IR0whWr8bwfABwAAAXCU0gAAAABQAgAAAyHS1QAAAAABAAAAAAAAAAEaUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwACTHsAZgA5ADUAYgBiADQAMgA2AC0ANQA1ADIANAAtADQAYgA0ADUALQA5ADQAMAAwAC0AZgBiADAAZgAyAGUANwA3AGUANQAxAGIAfQADCE4AYQBtAGUABDJUAHcAaQBuAEMAQQBUACAAMwAuADEAIABCAHUAaQBsAGQAIAA0ADAAMgAwAC4AMQAwAAUWUAByAG8AZgBpAGwAZQBEAGEAdABhAAZMewAxADYAZQA1ADUAYgA2ADAALQA3ADAANAAzAC0ANABhADYAMwAtAGIANgA1AGIALQA2ADEANAA3ADEAMwA4ADcAOABkADQAMgB9AAcSTABpAGIAcgBhAHIAaQBlAHMACEx7ADMAYgBmAGQANQA0ADUAOQAtAGIAMAA3AGYALQA0AGQANgBlAC0AYQBlADEAYQAtAGEAOAAzADMANQA2AGEANQA1ADEANAAyAH0ACUx7ADkAYwA5ADUAOAA5ADYAOAAtADIAYwA4ADUALQA0ADEAYgBiAC0AOAA4ADcAMQAtADgAOQA1AGYAZgAxAGYAZQBkAGUAMQBhAH0ACg5WAGUAcgBzAGkAbwBuAAsGaQBuAHQADApVAHMAYQBnAGUADQpUAGkAdABsAGUADhpWAGkAcwB1AEUAbABlAG0ATQBlAHQAZQByAA8OQwBvAG0AcABhAG4AeQAQDFMAeQBzAHQAZQBtABESVgBpAHMAdQBFAGwAZQBtAHMAEjBWAGkAcwB1AEUAbABlAG0AcwBTAHAAZQBjAGkAYQBsAEMAbwBuAHQAcgBvAGwAcwATKFYAaQBzAHUARQBsAGUAbQBzAFcAaQBuAEMAbwBuAHQAcgBvAGwAcwAUJFYAaQBzAHUARQBsAGUAbQBUAGUAeAB0AEUAZABpAHQAbwByABUiVgBpAHMAdQBOAGEAdABpAHYAZQBDAG8AbgB0AHIAbwBsABYUdgBpAHMAdQBpAG4AcAB1AHQAcwAXDHMAeQBzAHQAZQBtABgYVgBpAHMAdQBFAGwAZQBtAEIAYQBzAGUAGSZEAGUAdgBQAGwAYQBjAGUAaABvAGwAZABlAHIAcwBVAHMAZQBkABoIYgBvAG8AbAAbIlAAbAB1AGcAaQBuAEMAbwBuAHMAdAByAGEAaQBuAHQAcwAcTHsANAAzAGQANQAyAGIAYwBlAC0AOQA0ADIAYwAtADQANABkADcALQA5AGUAOQA0AC0AMQBiAGYAZABmADMAMQAwAGUANgAzAGMAfQAdHEEAdABMAGUAYQBzAHQAVgBlAHIAcwBpAG8AbgAeFFAAbAB1AGcAaQBuAEcAdQBpAGQAHxZTAHkAcwB0AGUAbQAuAEcAdQBpAGQAIEhhAGYAYwBkADUANAA0ADYALQA0ADkAMQA0AC0ANABmAGUANwAtAGIAYgA3ADgALQA5AGIAZgBmAGUAYgA3ADAAZgBkADEANwAhFFUAcABkAGEAdABlAEkAbgBmAG8AIkx7AGIAMAAzADMANgA2AGEAOAAtAGIANQBjADAALQA0AGIAOQBhAC0AYQAwADAAZQAtAGUAYgA4ADYAMAAxADEAMQAwADQAYwAzAH0AIw5VAHAAZABhAHQAZQBzACRMewAxADgANgA4AGYAZgBjADkALQBlADQAZgBjAC0ANAA1ADMAMgAtAGEAYwAwADYALQAxAGUAMwA5AGIAYgA1ADUANwBiADYAOQB9ACVMewBhADUAYgBkADQAOABjADMALQAwAGQAMQA3AC0ANAAxAGIANQAtAGIAMQA2ADQALQA1AGYAYwA2AGEAZAAyAGIAOQA2AGIANwB9ACYWTwBiAGoAZQBjAHQAcwBUAHkAcABlACdUVQBwAGQAYQB0AGUATABhAG4AZwB1AGEAZwBlAE0AbwBkAGUAbABGAG8AcgBDAG8AbgB2AGUAcgB0AGkAYgBsAGUATABpAGIAcgBhAHIAaQBlAHMAKBBMAGkAYgBUAGkAdABsAGUAKRRMAGkAYgBDAG8AbQBwAGEAbgB5ACoeVQBwAGQAYQB0AGUAUAByAG8AdgBpAGQAZQByAHMAKzhTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEgAYQBzAGgAdABhAGIAbABlACwSdgBpAHMAdQBlAGwAZQBtAHMALUg2AGMAYgAxAGMAZABlADEALQBkADUAZABjAC0ANABhADMAYgAtADkAMAA1ADQALQAyADEAZgBhADcANQA2AGEAMwBmAGEANAAuKEkAbgB0AGUAcgBmAGEAYwBlAFYAZQByAHMAaQBvAG4ASQBuAGYAbwAvTHsAYwA2ADEAMQBlADQAMAAwAC0ANwBmAGIAOQAtADQAYwAzADUALQBiADkAYQBjAC0ANABlADMAMQA0AGIANQA5ADkANgA0ADMAfQAwGE0AYQBqAG8AcgBWAGUAcgBzAGkAbwBuADEYTQBpAG4AbwByAFYAZQByAHMAaQBvAG4AMgxMAGUAZwBhAGMAeQAzMEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwAVgBlAHIAcwBpAG8AbgBJAG4AZgBvADQaQwBvAG0AcABhAHQAaQBiAGkAbABpAHQAeQDQAAIaA9ADAS0E0AUGGgbQBwgaAUUHCQjQAAkaBEUKCwQDAAAABQAAAAgAAAAAAAAA0AwLrQIAAADQDQEtDtAPAS0Q0AAJGgRFCgsEAwAAAAUAAAAIAAAAKAAAANAMC60BAAAA0A0BLRHQDwEtENAACRoERQoLBAMAAAAFAAAACAAAAAAAAADQDAutAgAAANANAS0S0A8BLRDQAAkaBEUKCwQDAAAABQAAAAgAAAAoAAAA0AwLrQIAAADQDQEtE9APAS0Q0AAJGgRFCgsEAwAAAAUAAAAIAAAAAAAAANAMC60CAAAA0A0BLRTQDwEtENAACRoERQoLBAMAAAAFAAAACAAAAAAAAADQDAutAgAAANANAS0V0A8BLRDQAAkaBEUKCwQDAAAABQAAAAgAAAAAAAAA0AwLrQIAAADQDQEtFtAPAS0X0AAJGgRFCgsEAwAAAAUAAAAIAAAAKAAAANAMC60EAAAA0A0BLRjQDwEtENAZGq0BRRscAdAAHBoCRR0LBAMAAAAFAAAACAAAAAAAAADQHh8tINAhIhoCRSMkAtAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAAAAANADAS0n0CgBLRHQKQEtENAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAQAAANADAS0n0CgBLRHQKQEtEJoqKwFFAAEC0AABLSzQAAEtF9AAHy0t0C4vGgPQMAutAQAAANAxC60RAAAA0DIarQDQMy8aA9AwC60CAAAA0DELrQMAAADQMhqtANA0Gq0A</v>
+          </d>
+        </o>
+        <v>{A3BBA713-63D7-4de6-BEC2-E3BAAD8789F8}</v>
+        <o>
+          <v n="Name">"{A3BBA713-63D7-4de6-BEC2-E3BAAD8789F8}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{C70B7845-2722-4a9b-A0EA-88C877A4B36F}</v>
+        <o>
+          <v n="Name">"{C70B7845-2722-4a9b-A0EA-88C877A4B36F}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String">
+            <v>EnableMaxAuthenticationTrials</v>
+            <v>true</v>
+            <v>MaxAuthenticationTrials</v>
+            <v>3</v>
+            <v>UserList</v>
+            <o t="UserList">
+              <a n="Users" cet="User">
+                <o>
+                  <v n="Id">{1bdb8a77-d683-429d-a0aa-27a4df326697}</v>
+                  <v n="Name">"Owner"</v>
+                  <v n="FullName">""</v>
+                  <v n="Description">""</v>
+                  <v n="Active">true</v>
+                </o>
+              </a>
+            </o>
+            <v>MaxTimeOfInactivity</v>
+            <v>10</v>
+            <v>EnableMaxTimeOfInactivity</v>
+            <v>true</v>
+            <v>GroupList</v>
+            <o t="GroupList">
+              <a n="Groups" cet="Group">
+                <o>
+                  <v n="Id">{2c1b3a07-8ce3-4a33-8a7f-259253dcf157}</v>
+                  <v n="Name">"Everyone"</v>
+                  <v n="Description">""</v>
+                  <v n="IsEveryoneGroup">true</v>
+                  <v n="IsOwnerGroup">false</v>
+                  <l n="UserMembers" t="ArrayList" cet="Guid">
+                    <v>1bdb8a77-d683-429d-a0aa-27a4df326697</v>
+                  </l>
+                  <l n="GroupMembers" t="ArrayList" />
+                </o>
+                <o>
+                  <v n="Id">{5207cf6f-ae15-4471-b33b-6fb5d532a676}</v>
+                  <v n="Name">"Owner"</v>
+                  <v n="Description">""</v>
+                  <v n="IsEveryoneGroup">false</v>
+                  <v n="IsOwnerGroup">true</v>
+                  <l n="UserMembers" t="ArrayList" cet="Guid">
+                    <v>1bdb8a77-d683-429d-a0aa-27a4df326697</v>
+                  </l>
+                  <l n="GroupMembers" t="ArrayList" />
+                </o>
+              </a>
+            </o>
+            <v>UserAuthentication</v>
+            <o t="UserAuthentication">
+              <d n="UserToPasswordHash" t="Hashtable" ckt="Guid" cvt="String">
+                <v>1bdb8a77-d683-429d-a0aa-27a4df326697</v>
+                <v>d41d8cd98f00b204e9800998ecf8427e</v>
+              </d>
+            </o>
+          </d>
+        </o>
+        <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
+        <o>
+          <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+      </d>
+      <d n="Values" t="Hashtable" />
+    </o>
+        </Data>
+        <TypeList>
+          <Type n="ArrayList">System.Collections.ArrayList</Type>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Group">{daecd4be-1e2b-4335-a125-4a1ac83ea49f}</Type>
+          <Type n="GroupList">{bf4dffda-f055-446d-9d7a-5f126720896b}</Type>
+          <Type n="Guid">System.Guid</Type>
+          <Type n="Guid[]">System.Guid[]</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="Int32">System.Int32</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+          <Type n="User">{cd83029e-13b0-491e-9e4b-921adda0d86b}</Type>
+          <Type n="UserAuthentication">{3635a671-97f5-41bb-9e29-0ebb9795975c}</Type>
+          <Type n="UserList">{9fe6b547-6bc8-4f11-b589-b517860c5891}</Type>
+        </TypeList>
+      </XmlArchive>
+    </PlcProjectOptions>
+  </ProjectExtensions>
+</Project>
