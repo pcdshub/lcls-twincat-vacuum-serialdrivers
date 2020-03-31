@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="MAIN" Id="{fbabf7ba-863e-4672-ba2a-2b621c5d036c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Instanitate the Function block for serial communication with TD20 *)
+fb_OerlikonTD20(astTD20Status := st_TD20_RBK,
+				fbTD20SerialDriver := fb_TD20_SerialDriver,
+				SerialRXBuffer := E1_SerialRXBuffer,
+				 SerialTXBuffer := E1_SerialTXBuffer);
+				 
+(* Serial port com function *)
+fbSerialLineControl_E1(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(E1_stComIn),
+	pComOut:=ADR(E1_stComOut),
+	SizeComIn:= SIZEOF(E1_stComIn),
+	TxBuffer:= E1_SerialRXBuffer,
+	RxBuffer:= E1_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+
+//////////////////////////////////////
+//Assign adresses to the pfeiffer controllers connected to this serial terminal
+st_Pfeiffer_CTRL[1].iSerialAddress :=1;
+st_Pfeiffer_CTRL[1].xEnableComm := TRUE;
+st_Pfeiffer_CTRL[2].iSerialAddress :=2;
+st_Pfeiffer_CTRL[2].xEnableComm := TRUE;
+	
+(* Instanitate the Function block for serial communication with Pfeiffer*)	
+fb_PfeifferCom(astPfeifferControl := st_Pfeiffer_CTRL,
+			   astPfeifferStatus	:= st_Pfeiffer_RBK,
+				afbPfeifferSerialDriver := fb_Pfeiffer_SerialDriver,
+				SerialRXBuffer:= E2_SerialRXBuffer,
+				SerialTXBuffer:= E2_SerialTXBuffer);
+				
+(* Serial port com function *)
+fbSerialLineControl_E2(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(E2_stComIn),
+	pComOut:=ADR(E2_stComOut),
+	SizeComIn:= SIZEOF(E2_stComIn),
+	TxBuffer:= E2_SerialRXBuffer,
+	RxBuffer:= E2_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+	
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,38 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4020.14">
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.7">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
 			<BitSize>8</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_MEMORY_NONE]]></Text>
 				<Enum>0</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]></Text>
 				<Enum>1</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]></Text>
 				<Enum>2</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]></Text>
 				<Enum>8</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
-				</Text>
+				<Text><![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]></Text>
 				<Enum>16</Enum>
 			</EnumInfo>
 			<Hides>
@@ -62,18 +52,27 @@
 			</Hides>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{0C50AE7E-3E32-4034-B950-FCFF5CDF59FF}" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{0C50AE7E-3E32-4034-B950-FCFF5CDF59FF}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Tasks>
 				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
 					<Name>PlcTask</Name>
 				</Task>
+				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask1</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{5B4A8AA2-6A3A-4EC2-B51E-C0F5C0B99BAA}" Name="LCLSVacuumSerialDriverLib" PrjFilePath="LCLSVacuumSerialDriverLib\LCLSVacuumSerialDriverLib.plcProj" TmcFilePath="LCLSVacuumSerialDriverLib\LCLSVacuumSerialDriverLib.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-				<Instance Id="#x01010010" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LCLSVacuumSerialDriverLib\LCLSVacuumSerialDriverLib.tmc">
 					<Name>LCLSVacuumSerialDriverLib Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+				</Instance>
+			</Project>
+			<Project GUID="{203C054B-4FDD-42A8-A6BE-EC0027FD544A}" Name="Example" PrjFilePath="Example\Example.plcproj" TmcFilePath="Example\Example.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>Example Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 				</Instance>
 			</Project>

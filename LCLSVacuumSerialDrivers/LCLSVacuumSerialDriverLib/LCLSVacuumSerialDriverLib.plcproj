@@ -20,7 +20,7 @@
 0.3.3 Trying out placeholders
 1.0.0 Out of beta, also, added export of error and warning codes for pfeiffer pumps
 1.0.1 clear_status bug in pfeiffer pump communications, should work now</Description>
-    <Released>true</Released>
+    <Released>false</Released>
     <CombineIds>false</CombineIds>
     <ProjectVersion>1.1.4</ProjectVersion>
   </PropertyGroup>

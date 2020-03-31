@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
   <POU Name="FB_TD20Transaction" Id="{dc793f6b-3a75-40e6-8ecf-906118eaf6a9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TD20Transaction
 VAR_INPUT
@@ -22,7 +22,7 @@ VAR_OUTPUT
 	q_xDone: BOOL;
 	q_xError: BOOL;
 	q_xTimeout: BOOL;
-	q_sResult: STRING;
+	q_sResult: STRING(MAX_STRING_LENGTH);
 	/// Sent data 
 	q_abSendData: ARRAY[0..23] OF BYTE;
 	/// Received Data data 
@@ -224,14 +224,5 @@ CASE iStep OF
 
 END_CASE]]></ST>
     </Implementation>
-    <LineIds Name="FB_TD20Transaction">
-      <LineId Id="3" Count="55" />
-      <LineId Id="222" Count="0" />
-      <LineId Id="224" Count="0" />
-      <LineId Id="60" Count="36" />
-      <LineId Id="225" Count="0" />
-      <LineId Id="97" Count="57" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

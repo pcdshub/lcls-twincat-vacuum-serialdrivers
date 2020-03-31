@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
   <DUT Name="ST_PfeifferControl" Id="{ec919d00-2da6-432b-be25-a78e8e56d132}">
     <Declaration><![CDATA[TYPE ST_PfeifferControl :
 STRUCT
@@ -11,12 +11,12 @@ STRUCT
 	xEnableComm: BOOL;
 	/// RS-485 Address 
 	{attribute 'pytmc' := '
-    pv: ADDR;
+    pv: SER_ADDR;
 	io: io;
 	'}
 	iSerialAddress: INT;
 	{attribute 'pytmc' := '
-	pv: EXT_ILK_OK;
+	pv: PumpingStation;
 	field: ZNAM ILK ACTIVE;
 	field: ONAM ILK OK;
 	io: i;
@@ -25,7 +25,7 @@ STRUCT
 	xPumpingStation_010: BOOL;
 	/// RUN_DO bit 
 	{attribute 'pytmc' := '
-    pv: RUN_DO;
+    pv: MotorPump;
 	io: i;
 	'}
 	xMotorPump_023: BOOL;
@@ -44,7 +44,7 @@ STRUCT
 	xIlk: BOOL;
 	/// run/start bit 
 	{attribute 'pytmc' := '
-	pv: RUN_SW;
+	pv: SER_RUN_SW;
 	io: io;
 	'}
 	xRunSW: BOOL;
