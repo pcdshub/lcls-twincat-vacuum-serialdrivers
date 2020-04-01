@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
   <GVL Name="GVL_COM" Id="{7c8ef01c-139d-4a9c-a18a-777693166eb4}">
     <Declaration><![CDATA[VAR_GLOBAL
-	// Define COM Ports incl. library Tc2_SerialCom
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
 	E1_SerialRXBuffer : ComBuffer;
 	E1_SerialTXBuffer : ComBuffer;
 	
@@ -16,7 +16,7 @@
 	
 	
 	
-	// Define COM Ports incl. library Tc2_SerialCom
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
 	E2_SerialRXBuffer : ComBuffer;
 	E2_SerialTXBuffer : ComBuffer;
 	

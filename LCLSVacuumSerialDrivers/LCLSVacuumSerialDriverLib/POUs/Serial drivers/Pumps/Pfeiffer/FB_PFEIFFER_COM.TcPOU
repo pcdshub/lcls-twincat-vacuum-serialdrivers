@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
   <POU Name="FB_PFEIFFER_COM" Id="{8acfeb34-8814-43c5-b863-afc50afa2539}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PFEIFFER_COM
 VAR_IN_OUT
 	astPfeifferControl: ARRAY[1..gcMaxPfeifferPumps] OF ST_PfeifferControl;
 	astPfeifferStatus: ARRAY[1..gcMaxPfeifferPumps] OF ST_PfeifferStatus;
-	afbPfeifferSerialDriver: ARRAY[1..gcMaxPfeifferPumps] OF FB_PfeifferSerialDriver;
 	SerialRXBuffer: ComBuffer;
 	SerialTXBuffer: ComBuffer;
 END_VAR
 VAR
+	afbPfeifferSerialDriver: ARRAY[1..gcMaxPfeifferPumps] OF FB_PfeifferSerialDriver;
 	iPump: INT := 1;
 	tTimeOut: TIME := TIME#1s0ms;
 END_VAR]]></Declaration>

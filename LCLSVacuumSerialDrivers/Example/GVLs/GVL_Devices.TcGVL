@@ -5,19 +5,22 @@
 	
 	(*TD20*)
 	{attribute 'pytmc' := '
-    pv: PTM:110
+    pv: PTM:01
 	'}
-	st_TD20_RBK			: ST_TD20Status;
-	fb_OerlikonTD20 : FB_Oerlikon_TD20_COM;
-	fb_TD20_SerialDriver	: FB_TD20SerialDriver;
+	PTM_01 : FB_PTM_TurboDrive; // PLC IO Interface
+	fb_OerlikonTD20 : FB_Oerlikon_TD20_COM; //Serial Interface
 	
 	
 	(*Pfeiffer*)
-	{attribute 'pytmc' := [1] := 'pv: PTM:100';
-					   := [2] := 'pv: PTM:120'}
+	{attribute 'pytmc' := '
+    pv: PTM:02
+	'}
+	PTM_02 : FB_PTM_Pfeiffer;
+	{attribute 'pytmc' := '
+    pv: PTM:03
+	'}
+	PTM_03 : FB_PTM_Pfeiffer;
 	st_Pfeiffer_CTRL 			: ARRAY[1..20] OF ST_PfeifferControl;
-	{attribute 'pytmc' := [1] := 'pv: PTM:100';
-					   := [2] := 'pv: PTM:120'}
 	st_Pfeiffer_RBK 			: ARRAY[1..20] OF ST_PfeifferStatus;
 	fb_Pfeiffer_SerialDriver 	: ARRAY[1..20] OF FB_PfeifferSerialDriver;
 	fb_PfeifferCom : FB_PFEIFFER_COM;

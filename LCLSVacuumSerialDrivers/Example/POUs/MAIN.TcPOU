@@ -6,13 +6,17 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Instanitate the Function block for serial communication with TD20 *)
-fb_OerlikonTD20(astTD20Status := st_TD20_RBK,
-				fbTD20SerialDriver := fb_TD20_SerialDriver,
-				SerialRXBuffer := E1_SerialRXBuffer,
-				 SerialTXBuffer := E1_SerialTXBuffer);
+      <ST><![CDATA[// Leybold Turbo Drive
+(* Instanitate the Function block for Pump Control*)
+PTM_01(i_xExtILKOk:= TRUE , iq_stPtm=> );
+
+(* Instanitate the Function block for serial communication with TD20 *)
+fb_OerlikonTD20(SerialRXBuffer := E1_SerialRXBuffer,
+				SerialTXBuffer := E1_SerialTXBuffer,
+				astTD20Status=>);
 				 
-(* Serial port com function *)
+(*Instanitate Serial port com function *) 
+(*Can be called in a seperate PRG_Serial*)
 fbSerialLineControl_E1(
 	Mode:= SERIALLINEMODE_EL6_22B,
 	pComIn:= ADR(E1_stComIn),
@@ -23,8 +27,18 @@ fbSerialLineControl_E1(
 	Error=> ,
 	ErrorID=> );
 
-//////////////////////////////////////
-//Assign adresses to the pfeiffer controllers connected to this serial terminal
+(* Copy Status Pv's into the PTM structure*)
+PTM_01.M_Serial_IO(fb_OerlikonTD20.astTD20Status);
+
+
+
+
+//Pfeiffer Turbo
+(* Instanitate the Function block for Pump Control*)
+PTM_02(i_xExtIlkOK:= TRUE , iq_stPTM=> );
+PTM_03(i_xExtIlkOK:= TRUE , iq_stPTM=> );
+
+(*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
 st_Pfeiffer_CTRL[1].iSerialAddress :=1;
 st_Pfeiffer_CTRL[1].xEnableComm := TRUE;
 st_Pfeiffer_CTRL[2].iSerialAddress :=2;
@@ -32,12 +46,12 @@ st_Pfeiffer_CTRL[2].xEnableComm := TRUE;
 	
 (* Instanitate the Function block for serial communication with Pfeiffer*)	
 fb_PfeifferCom(astPfeifferControl := st_Pfeiffer_CTRL,
-			   astPfeifferStatus	:= st_Pfeiffer_RBK,
-				afbPfeifferSerialDriver := fb_Pfeiffer_SerialDriver,
+			   astPfeifferStatus:= st_Pfeiffer_RBK,
 				SerialRXBuffer:= E2_SerialRXBuffer,
 				SerialTXBuffer:= E2_SerialTXBuffer);
 				
-(* Serial port com function *)
+(*Instanitate Serial port com function *) 
+(*Can be called in a seperate PRG_Serial*)
 fbSerialLineControl_E2(
 	Mode:= SERIALLINEMODE_EL6_22B,
 	pComIn:= ADR(E2_stComIn),
@@ -47,6 +61,11 @@ fbSerialLineControl_E2(
 	RxBuffer:= E2_SerialRXBuffer,
 	Error=> ,
 	ErrorID=> );
+	
+(* Copy Status Pv's into the PTM structure*)
+PTM_02.M_Serial_IO(st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK[1]);
+PTM_03.M_Serial_IO(st_Pfeiffer_CTRL[2],st_Pfeiffer_RBK[2]);
+	
 	
 ]]></ST>
     </Implementation>
