@@ -141,7 +141,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{203C054B-4FDD-42A8-A6BE-EC0027FD544A}" Name="Example" PrjFilePath="Example\Example.plcproj" TmcFilePath="Example\Example.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Example\Example.tmc">
 					<Name>Example Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -152,9 +152,19 @@
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
-							<Name>LCLSVacuumSerialDriverLib.lcls_twincat_vacuum.LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+							<Name>lcls_twincat_vacuum.LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
 							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.stComIn</Name>
+							<Comment><![CDATA[SERIAL IO]]></Comment>
+							<Type GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.E2_stComIn</Name>
+							<Comment><![CDATA[SERIAL IO]]></Comment>
+							<Type GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_01.i_xAtSpd</Name>
@@ -164,6 +174,14 @@
 						<Var>
 							<Name>GVL_Devices.PTM_01.i_xFaultNC</Name>
 							<Comment><![CDATA[ Error Active when no Error is present]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.PTM_03.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.PTM_03.i_xRemote</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -194,27 +212,17 @@
 							<Comment><![CDATA[ Error]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
-						<Var>
-							<Name>GVL_Devices.PTM_03.i_xWarn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.PTM_03.i_xRemote</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_COM.E1_stComIn</Name>
-							<Comment><![CDATA[SERIAL IO]]></Comment>
-							<Type GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-						</Var>
-						<Var>
-							<Name>GVL_COM.E2_stComIn</Name>
-							<Comment><![CDATA[SERIAL IO]]></Comment>
-							<Type GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_COM.stComOut</Name>
+							<Type GUID="{F2D2AC72-ED5B-FB82-D333-AFF659CBA42A}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_COM.E2_stComOut</Name>
+							<Type GUID="{F2D2AC72-ED5B-FB82-D333-AFF659CBA42A}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_01.q_RunDO</Name>
 							<Comment><![CDATA[ Start/Stop]]></Comment>
@@ -247,14 +255,6 @@
 						<Var>
 							<Name>GVL_Devices.PTM_03.q_xRemote</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_COM.E1_stComOut</Name>
-							<Type GUID="{F2D2AC72-ED5B-FB82-D333-AFF659CBA42A}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-						</Var>
-						<Var>
-							<Name>GVL_COM.E2_stComOut</Name>
-							<Type GUID="{F2D2AC72-ED5B-FB82-D333-AFF659CBA42A}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="8">

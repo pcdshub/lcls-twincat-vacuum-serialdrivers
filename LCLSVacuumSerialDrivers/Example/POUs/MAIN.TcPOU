@@ -6,29 +6,18 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Leybold Turbo Drive
+      <ST><![CDATA[	
+PRG_COM();
+
+// Leybold Turbo Drive
 (* Instanitate the Function block for Pump Control*)
 PTM_01(i_xExtILKOk:= TRUE , iq_stPtm=> );
-
 (* Instanitate the Function block for serial communication with TD20 *)
-fb_OerlikonTD20(SerialRXBuffer := E1_SerialRXBuffer,
-				SerialTXBuffer := E1_SerialTXBuffer,
+PTM_01_Serial(SerialRXBuffer := SerialRXBuffer, 
+				SerialTXBuffer:= SerialTXBuffer,
 				astTD20Status=>);
-				 
-(*Instanitate Serial port com function *) 
-(*Can be called in a seperate PRG_Serial*)
-fbSerialLineControl_E1(
-	Mode:= SERIALLINEMODE_EL6_22B,
-	pComIn:= ADR(E1_stComIn),
-	pComOut:=ADR(E1_stComOut),
-	SizeComIn:= SIZEOF(E1_stComIn),
-	TxBuffer:= E1_SerialRXBuffer,
-	RxBuffer:= E1_SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );
-
 (* Copy Status Pv's into the PTM structure*)
-PTM_01.M_Serial_IO(fb_OerlikonTD20.astTD20Status);
+PTM_01.M_Serial_IO(PTM_01_Serial.astTD20Status);
 
 
 
@@ -50,23 +39,12 @@ fb_PfeifferCom(astPfeifferControl := st_Pfeiffer_CTRL,
 				SerialRXBuffer:= E2_SerialRXBuffer,
 				SerialTXBuffer:= E2_SerialTXBuffer);
 				
-(*Instanitate Serial port com function *) 
-(*Can be called in a seperate PRG_Serial*)
-fbSerialLineControl_E2(
-	Mode:= SERIALLINEMODE_EL6_22B,
-	pComIn:= ADR(E2_stComIn),
-	pComOut:=ADR(E2_stComOut),
-	SizeComIn:= SIZEOF(E2_stComIn),
-	TxBuffer:= E2_SerialRXBuffer,
-	RxBuffer:= E2_SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );
-	
+
 (* Copy Status Pv's into the PTM structure*)
 PTM_02.M_Serial_IO(st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK[1]);
 PTM_03.M_Serial_IO(st_Pfeiffer_CTRL[2],st_Pfeiffer_RBK[2]);
 	
-	
+
 ]]></ST>
     </Implementation>
   </POU>

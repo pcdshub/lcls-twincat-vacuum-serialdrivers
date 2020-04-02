@@ -5,10 +5,11 @@
 VAR
 	tTimeOut: TIME := TIME#1S0MS;
 	fbTD20SerialDriver: FB_TD20SerialDriver;
+	
 END_VAR
 VAR_IN_OUT
-	SerialRXBuffer: ComBuffer;
-	SerialTXBuffer: ComBuffer;
+	SerialRXBuffer : ComBuffer;
+	SerialTXBuffer : ComBuffer;
 END_VAR
 VAR_OUTPUT
 	astTD20Status: ST_TD20Status;
@@ -36,7 +37,11 @@ IF fbTD20SerialDriver.q_xDone
 	OR fbTD20SerialDriver.q_xTimeout THEN
 		(* reset for next time *)
 		fbTD20SerialDriver(i_xExecute:= FALSE, iq_stSerialRXBuffer:= SerialRXBuffer, iq_stSerialTXBuffer:= SerialTXBuffer);
-END_IF]]></ST>
+END_IF
+
+
+	
+	]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
