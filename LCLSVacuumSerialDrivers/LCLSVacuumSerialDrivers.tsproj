@@ -177,14 +177,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Devices.PTM_03.i_xWarn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_Devices.PTM_03.i_xRemote</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_Devices.PTM_02.i_xAtSpd</Name>
 							<Comment><![CDATA[ Normaml operation when true]]></Comment>
 							<Type>BOOL</Type>
@@ -210,6 +202,14 @@
 						<Var>
 							<Name>GVL_Devices.PTM_03.i_xFaultNC</Name>
 							<Comment><![CDATA[ Error]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.PTM_03.i_xWarn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.PTM_03.i_xRemote</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
