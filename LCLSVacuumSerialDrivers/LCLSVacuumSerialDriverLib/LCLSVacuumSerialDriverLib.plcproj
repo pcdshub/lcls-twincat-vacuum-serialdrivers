@@ -12,7 +12,7 @@
     <Implicit_KindOfTask>{ec041d0b-fe81-4dc2-8d5a-a523464db2c2}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{7fc547e7-55bd-4be9-bfad-44c5444f3846}</Implicit_Jitter_Distribution>
     <LibraryReferences>{8da44080-7753-4c76-a5cd-f8851b391d8e}</LibraryReferences>
-    <Company>SLAC</Company>
+    <Company>SLAC - LCLS</Company>
     <Title>LCLSVacuumSerialDriverLib</Title>
     <Author>Alex Wallace</Author>
     <Description>Took the drivers from 1.0.7 vacuum lib and split them off.
@@ -20,9 +20,20 @@
 0.3.3 Trying out placeholders
 1.0.0 Out of beta, also, added export of error and warning codes for pfeiffer pumps
 1.0.1 clear_status bug in pfeiffer pump communications, should work now</Description>
-    <Released>true</Released>
+    <Released>false</Released>
     <CombineIds>false</CombineIds>
-    <ProjectVersion>1.1.4</ProjectVersion>
+    <ProjectVersion>0.0.0</ProjectVersion>
+    <LibraryCategories>
+      <LibraryCategory xmlns="">
+        <Id>{a5724f56-da3f-40b6-8a5e-63302d98c4cc}</Id>
+        <Version>0.0.0</Version>
+        <DefaultName>SLAC - LCLS</DefaultName>
+      </LibraryCategory>
+    </LibraryCategories>
+    <SelectedLibraryCategories>
+      <Id xmlns="">{a5724f56-da3f-40b6-8a5e-63302d98c4cc}</Id>
+    </SelectedLibraryCategories>
+    <DefaultNamespace>LCLS_Vacuum_Serial</DefaultNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\LVDT\ST_SerLVC4000.TcDUT">
@@ -31,15 +42,12 @@
     </Compile>
     <Compile Include="DUTs\Oerlikon\ST_TD20Status.TcDUT">
       <SubType>Code</SubType>
-      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
     <Compile Include="DUTs\Pfeiffer\ST_PfeifferControl.TcDUT">
       <SubType>Code</SubType>
-      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
     <Compile Include="DUTs\Pfeiffer\ST_PfeifferStatus.TcDUT">
       <SubType>Code</SubType>
-      <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
     <Compile Include="GVLs\GVL_MacroSensorsParameters.TcGVL">
       <SubType>Code</SubType>
@@ -122,9 +130,9 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="L2SI Vacuum Library">
-      <DefaultResolution>L2SI Vacuum Library, * (SLAC)</DefaultResolution>
-      <Namespace>L2SI_Vacuum_Library</Namespace>
+    <PlaceholderReference Include="LCLS Vacuum">
+      <DefaultResolution>LCLS Vacuum, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>LCLS_Vacuum</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_SerialCom">
       <DefaultResolution>Tc2_SerialCom, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -155,11 +163,6 @@
     <Content Include="LCLSVacuumSerialDriverLib.tmc">
       <SubType>Content</SubType>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <PlaceholderResolution Include="L2SI Vacuum Library">
-      <Resolution>L2SI Vacuum Library, * (SLAC)</Resolution>
-    </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
@@ -220,8 +223,6 @@
           <v n="Name">"{C70B7845-2722-4a9b-A0EA-88C877A4B36F}"</v>
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" ckt="String">
-            <v>EnableMaxAuthenticationTrials</v>
-            <v>true</v>
             <v>MaxAuthenticationTrials</v>
             <v>3</v>
             <v>UserList</v>
@@ -274,6 +275,8 @@
                 <v>d41d8cd98f00b204e9800998ecf8427e</v>
               </d>
             </o>
+            <v>EnableMaxAuthenticationTrials</v>
+            <v>true</v>
           </d>
         </o>
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -281,6 +284,21 @@
           <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
+        </o>
+        <v>{F66C7017-BDD8-4114-926C-81D6D687E35F}</v>
+        <o>
+          <v n="Name">"{F66C7017-BDD8-4114-926C-81D6D687E35F}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
+        <o>
+          <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>GlobalVisuImageFilePath</v>
+            <v>%APPLICATIONPATH%</v>
+          </d>
         </o>
       </d>
       <d n="Values" t="Hashtable" />

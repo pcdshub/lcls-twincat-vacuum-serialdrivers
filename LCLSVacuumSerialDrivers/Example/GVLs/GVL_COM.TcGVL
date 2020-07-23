@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <GVL Name="GVL_COM" Id="{7c8ef01c-139d-4a9c-a18a-777693166eb4}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
+	SerialRXBuffer : ComBuffer;
+	SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	fbSerialLineControl: SerialLineControl;
+
+	//SERIAL IO
+	stComIn		AT %I*	:	EL6inData22B;
+	stComOut		AT %Q*	:	EL6outData22B;
+	
+	
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
+	E2_SerialRXBuffer : ComBuffer;
+	E2_SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	E2_fbSerialLineControl: SerialLineControl;
+
+	//SERIAL IO
+	E2_stComIn		AT %I*	:	EL6inData22B;
+	E2_stComOut		AT %Q*	:	EL6outData22B;
+	
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

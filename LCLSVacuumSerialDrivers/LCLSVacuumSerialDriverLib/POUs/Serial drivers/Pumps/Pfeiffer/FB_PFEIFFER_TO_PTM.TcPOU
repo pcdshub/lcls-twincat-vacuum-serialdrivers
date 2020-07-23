@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
   <POU Name="FB_PFEIFFER_TO_PTM" Id="{52e32b74-ae54-4ccd-ade3-e43f2f9c5233}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PFEIFFER_TO_PTM
 VAR_IN_OUT
@@ -17,7 +17,7 @@ to the generic turbo structures *)
 iq_stPfeiffer_ctrl.xPumpingStation_010 := iq_stPTM.q_RunDO;
 iq_stPfeiffer_ctrl.xMotorPump_023 := 1; //Setting always true because parameter 10 alone can enable/disable the pump
 iq_stPfeiffer_ctrl.uiPowerPct_708 := iq_stPTM.q_uiPowerPct;
-iq_stPfeiffer_ctrl.xErrorAck_009 := iq_stPTM.i_xReset;
+iq_stPfeiffer_ctrl.xErrorAck_009 := iq_stPTM.xResetSW;
 
 (* Readbacks *)
 iq_stPTM.i_xAccel := iq_stPfeiffer_stat.xPumpAccelerating_307;
@@ -38,33 +38,17 @@ iq_stPTM.i_iWarningCode := iq_stPfeiffer_stat.iWarningCode_303;
 IF iq_stPfeiffer_stat.xErrorAcknowledged THEN
 	iq_stPfeiffer_stat.xErrorAcknowledged := FALSE;
 	iq_stPfeiffer_ctrl.xErrorAck_009 := FALSE;
-	iq_stPTM.i_xReset := FALSE;
+	iq_stPTM.xResetSW := FALSE;
 END_IF
 
 IF iq_stPfeiffer_stat.sErrorCode_303 = '' THEN
 	;
 ELSIF iq_stPfeiffer_stat.sErrorCode_303 <> '000000' THEN
-iq_stPTM.xFault := TRUE;
+iq_stPTM.i_xFault := TRUE;
 ELSE
-iq_stPTM.xFault := FALSE;
+iq_stPTM.i_xFault := FALSE;
 END_IF
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_PFEIFFER_TO_PTM">
-      <LineId Id="3" Count="4" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="57" Count="0" />
-      <LineId Id="8" Count="9" />
-      <LineId Id="50" Count="0" />
-      <LineId Id="18" Count="4" />
-      <LineId Id="37" Count="0" />
-      <LineId Id="39" Count="1" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="58" Count="0" />
-      <LineId Id="41" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="23" Count="7" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
