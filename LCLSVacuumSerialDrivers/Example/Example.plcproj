@@ -45,9 +45,9 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="lcls-twincat-vacuum">
-      <DefaultResolution>lcls-twincat-vacuum, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_vacuum</Namespace>
+    <PlaceholderReference Include="LCLS Vacuum">
+      <DefaultResolution>LCLS Vacuum, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>LCLS_Vacuum</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="LCLSVacuumSerialDriverLib">
       <DefaultResolution>LCLSVacuumSerialDriverLib, * (SLAC)</DefaultResolution>
@@ -74,6 +74,11 @@
     <None Include="Example.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="LCLS Vacuum">
+      <Resolution>LCLS Vacuum, * (SLAC - LCLS)</Resolution>
+    </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
