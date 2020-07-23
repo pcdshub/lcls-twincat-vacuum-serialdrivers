@@ -6,15 +6,16 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//PTM_01
+      <ST><![CDATA[//needs to run on a seperate task
+//PTM_01
 (*Instanitate Serial port com function *) 
 fbSerialLineControl(
 	Mode:= SERIALLINEMODE_EL6_22B,
 	pComIn:= ADR(stComIn),
 	pComOut:=ADR(stComOut),
 	SizeComIn:= SIZEOF(stComIn),
-	TxBuffer:= SerialRXBuffer,
-	RxBuffer:= SerialTXBuffer,
+	TxBuffer:= SerialTXBuffer,
+	RxBuffer:= SerialRXBuffer,
 	Error=> ,
 	ErrorID=> );
 	
@@ -26,7 +27,7 @@ E2_fbSerialLineControl(
 	pComIn:= ADR(E2_stComIn),
 	pComOut:=ADR(E2_stComOut),
 	SizeComIn:= SIZEOF(E2_stComIn),
-	TxBuffer:= E2_SerialRXBuffer,
+	TxBuffer:= E2_SerialTXBuffer,
 	RxBuffer:= E2_SerialRXBuffer,
 	Error=> ,
 	ErrorID=> );
