@@ -45,13 +45,13 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="lcls-twincat-vacuum">
-      <DefaultResolution>lcls-twincat-vacuum, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_vacuum</Namespace>
+    <PlaceholderReference Include="LCLS Vacuum">
+      <DefaultResolution>LCLS Vacuum, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>LCLS_Vacuum</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="LCLSVacuumSerialDriverLib">
-      <DefaultResolution>LCLSVacuumSerialDriverLib, * (SLAC)</DefaultResolution>
-      <Namespace>LCLSVacuumSerialDriverLib</Namespace>
+      <DefaultResolution>LCLSVacuumSerialDriverLib, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>LCLS_Vacuum_Serial</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_SerialCom">
       <DefaultResolution>Tc2_SerialCom, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -69,6 +69,14 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="LCLS Vacuum">
+      <Resolution>LCLS Vacuum, * (SLAC - LCLS)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
+      <Resolution>LCLSVacuumSerialDriverLib, * (SLAC - LCLS)</Resolution>
+    </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
     <None Include="Example.tmc">
