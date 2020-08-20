@@ -1,3 +1,0 @@
-[submodule "lcls-twincat-motion/Library/tc_mca_std_lib"]
-	path = lcls-twincat-motion/Library/tc_mca_std_lib
-	url = ../tc_mca_std_lib.git
