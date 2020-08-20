@@ -160,9 +160,9 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LCLSVacuumSerialDriverLib.tmc">
+    <None Include="LCLSVacuumSerialDriverLib.tmc">
       <SubType>Content</SubType>
-    </Content>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
