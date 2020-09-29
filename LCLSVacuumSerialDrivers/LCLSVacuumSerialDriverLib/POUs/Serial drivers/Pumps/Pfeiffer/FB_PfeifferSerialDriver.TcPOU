@@ -311,7 +311,7 @@ CASE iStep OF
 		END_IF
 	
 	5001:(* Update Pump Speed *) (* Acitve Rotation Speed *)
-		fbFormatString( sFormat:= '%.3u', arg1:= F_DINT(i_stControl.diSetRotationSpeed_309), sOut => sSendData);
+		fbFormatString( sFormat:= '%.6u', arg1:= F_DINT(i_stControl.diSetRotationSpeed_309), sOut => sSendData);
 			fbPfeifferTransaction.i_xExecute:= TRUE;
 			fbPfeifferTransaction.i_xActionCommand:= TRUE;
 			fbPfeifferTransaction.i_iParameterNum:= 309;
