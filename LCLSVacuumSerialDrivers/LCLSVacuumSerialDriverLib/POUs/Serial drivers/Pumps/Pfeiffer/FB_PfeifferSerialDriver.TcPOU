@@ -30,6 +30,7 @@ VAR
 	sSendData: STRING;
 	fbPfeifferTransaction: FB_PfeifferTransaction;
 	fbFormatString: FB_FormatString;
+	diOldSetRotationSpeed_309 :DINT;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* This function block performs serial transactions with a Pfeiffer RC400 Pump controller *)
@@ -301,7 +302,8 @@ CASE iStep OF
 		END_IF
 
 	5000: 
-		IF (i_stControl.diSetRotationSpeed_309 <> q_stStatus.diActiveRotationSpeed_309) AND ( i_stControl.diSetRotationSpeed_309 <>0)  THEN
+		IF (i_stControl.diSetRotationSpeed_309 <> diOldSetRotationSpeed_309) AND ( i_stControl.diSetRotationSpeed_309 <> 0)  THEN
+			diOldSetRotationSpeed_309 := i_stControl.diSetRotationSpeed_309;
 			iStep := 5001;
 		ELSE
 			q_sResult := 'Success';
@@ -309,7 +311,7 @@ CASE iStep OF
 		END_IF
 	
 	5001:(* Update Pump Speed *) (* Acitve Rotation Speed *)
-		fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.diSetRotationSpeed_309), sOut => sSendData);
+		fbFormatString( sFormat:= '%.3u', arg1:= F_DINT(i_stControl.diSetRotationSpeed_309), sOut => sSendData);
 			fbPfeifferTransaction.i_xExecute:= TRUE;
 			fbPfeifferTransaction.i_xActionCommand:= TRUE;
 			fbPfeifferTransaction.i_iParameterNum:= 309;
