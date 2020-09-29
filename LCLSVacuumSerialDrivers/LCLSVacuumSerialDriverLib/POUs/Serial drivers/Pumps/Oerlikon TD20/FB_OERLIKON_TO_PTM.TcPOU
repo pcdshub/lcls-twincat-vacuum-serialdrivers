@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_OERLIKON_TO_PTM" Id="{b8c18c05-718b-473b-b092-6fb68e2790b5}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_OERLIKON_TO_PTM
 VAR_IN_OUT
@@ -22,9 +22,9 @@ iq_stPTM.i_diElecTemp := WORD_TO_DINT(iq_stOerlikon_stat.wConverterTemp_P11);
 iq_stPTM.i_diPumpTemp := WORD_TO_DINT(iq_stOerlikon_stat.wPumpTemp_P127);
 
 (* Faults and warnings *)
-iq_stPTM.xFault := iq_stOerlikon_stat.wStatusWord.3;
+//iq_stPTM.xFault := iq_stOerlikon_stat.wStatusWord.3;
 iq_stPTM.i_xTempFault := iq_stOerlikon_stat.wStatusWord.7; (* specified as a temperature warning but it could be a fault *)
-iq_stPTM.xWarn := iq_stOerlikon_stat.wStatusWord.14; (* warning summary bit *)
+//iq_stPTM.xWarn := iq_stOerlikon_stat.wStatusWord.14; (* warning summary bit *)
 
 ]]></ST>
     </Implementation>

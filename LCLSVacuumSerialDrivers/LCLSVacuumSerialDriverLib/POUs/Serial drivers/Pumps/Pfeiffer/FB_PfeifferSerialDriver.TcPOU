@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_PfeifferSerialDriver" Id="{ae4993b2-9a7a-48a9-a98a-cb5b06b3f43a}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PfeifferSerialDriver
 VAR_INPUT
@@ -297,10 +297,39 @@ CASE iStep OF
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			q_stStatus.uiPowerPct_708 := STRING_TO_UINT( fbPfeifferTransaction.q_sResponseData);
 			a_ClearTrans();  (* to provide rising edge for execute *)
-			iStep := 5000;
+			iStep := 5000; // was 5005, but we don't want to control via serial but via PLC IO, just write the pump speed
 		END_IF
 
-	5000: (* Check Status vs. requested parameters, set iff necessary *)
+	5000: 
+		IF (i_stControl.diSetRotationSpeed_309 <> q_stStatus.diActiveRotationSpeed_309) AND ( i_stControl.diSetRotationSpeed_309 <>0)  THEN
+			iStep := 5001;
+		ELSE
+			q_sResult := 'Success';
+			iStep := 8000;
+		END_IF
+	
+	5001:(* Update Pump Speed *) (* Acitve Rotation Speed *)
+		fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.diSetRotationSpeed_309), sOut => sSendData);
+			fbPfeifferTransaction.i_xExecute:= TRUE;
+			fbPfeifferTransaction.i_xActionCommand:= TRUE;
+			fbPfeifferTransaction.i_iParameterNum:= 309;
+			fbPfeifferTransaction.i_iDataLength:= 6;
+			fbPfeifferTransaction.i_sSendData:= sSendData;
+		IF fbPfeifferTransaction.q_xError THEN
+			q_sResult := CONCAT('in Step 5000 fbPfeifferTransaction failed with message: ', fbPfeifferTransaction.q_sResult);
+			iStep := 9000;
+		ELSIF fbPfeifferTransaction.q_xDone THEN
+			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
+			q_stStatus.diActiveRotationSpeed_309 := STRING_TO_DINT( fbPfeifferTransaction.q_sResponseData);
+				a_ClearTrans();  (* to provide rising edge for execute *)
+			    iStep := 5000;
+			ELSE
+				q_sResult := CONCAT('In step 5000 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
+				iStep := 9000;
+			END_IF
+		END_IF
+		
+	5005:(* Check Status vs. requested parameters, set iff necessary *)
 		IF i_stControl.xErrorAck_009 THEN
 			iStep := 5030;
 		ELSIF i_stControl.xPumpingStation_010 <> q_stStatus.xPumpingStation_010 THEN
@@ -367,7 +396,7 @@ CASE iStep OF
 		END_IF
 		
 	5012: (* Update Power Consumption Percent *)
-		fbFormatString( sFormat:= '%.3u', arg1:= F_UINT(i_stControl.uiPowerPct_708), sOut => sSendData);
+		fbFormatString( sFormat:= '%.6u', arg1:= F_UINT(i_stControl.uiPowerPct_708), sOut => sSendData);
 			fbPfeifferTransaction.i_xExecute:= TRUE;
 			fbPfeifferTransaction.i_xActionCommand:= TRUE;
 			fbPfeifferTransaction.i_iParameterNum:= 708;
@@ -455,15 +484,6 @@ q_stStatus.xTimeout := fbPfeifferTransaction.q_xTimeout;
 q_sLastSentString := fbPfeifferTransaction.q_sLastSentString;
 q_sLastReceivedString := fbPfeifferTransaction.q_sLastReceivedString;]]></ST>
     </Implementation>
-    <Action Name="a_ClearTrans" Id="{d9db6876-f06d-4a00-9454-fd3e236d65de}">
-      <Implementation>
-        <ST><![CDATA[fbPfeifferTransaction.i_xExecute := FALSE;
-fbPfeifferTransaction.i_xActionCommand:= FALSE;
-fbPfeifferTransaction.i_iParameterNum:= 0;
-fbPfeifferTransaction.i_iDataLength:= 0;
-fbPfeifferTransaction.i_sSendData:= '';]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="_A_ClearStatus" Id="{ffd99f77-1f39-44cc-8551-4a2a6969757b}">
       <Implementation>
         <ST><![CDATA[q_stStatus.xPumpingStation_010 := FALSE;
@@ -477,34 +497,14 @@ q_stStatus.lrDriveCurrent_310 := 0;
 q_stStatus.diDrivePower_316 := 0;]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_PfeifferSerialDriver">
-      <LineId Id="3" Count="250" />
-      <LineId Id="457" Count="0" />
-      <LineId Id="459" Count="13" />
-      <LineId Id="254" Count="1" />
-      <LineId Id="419" Count="1" />
-      <LineId Id="256" Count="5" />
-      <LineId Id="477" Count="1" />
-      <LineId Id="262" Count="53" />
-      <LineId Id="475" Count="1" />
-      <LineId Id="479" Count="18" />
-      <LineId Id="316" Count="20" />
-      <LineId Id="393" Count="1" />
-      <LineId Id="396" Count="0" />
-      <LineId Id="427" Count="0" />
-      <LineId Id="397" Count="12" />
-      <LineId Id="412" Count="1" />
-      <LineId Id="418" Count="0" />
-      <LineId Id="337" Count="26" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_PfeifferSerialDriver.a_ClearTrans">
-      <LineId Id="2" Count="3" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_PfeifferSerialDriver._A_ClearStatus">
-      <LineId Id="2" Count="7" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
+    <Action Name="a_ClearTrans" Id="{d9db6876-f06d-4a00-9454-fd3e236d65de}">
+      <Implementation>
+        <ST><![CDATA[fbPfeifferTransaction.i_xExecute := FALSE;
+fbPfeifferTransaction.i_xActionCommand:= FALSE;
+fbPfeifferTransaction.i_iParameterNum:= 0;
+fbPfeifferTransaction.i_iDataLength:= 0;
+fbPfeifferTransaction.i_sSendData:= '';]]></ST>
+      </Implementation>
+    </Action>
   </POU>
 </TcPlcObject>

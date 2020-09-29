@@ -1,32 +1,16 @@
-<?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.7">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-			<Format>
-				<Printf>%d.%d.%d.%d.%d.%d</Printf>
-				<Parameter>[0]</Parameter>
-				<Parameter>[1]</Parameter>
-				<Parameter>[2]</Parameter>
-				<Parameter>[3]</Parameter>
-				<Parameter>[4]</Parameter>
-				<Parameter>[5]</Parameter>
-			</Format>
-		</DataType>
-		<DataType>
 			<Name GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
-			<Comment><![CDATA[ This data type is corresponding to the
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
    KL-6xxx data structure used in the
    TwinCAT SystemManager
    (KL-6xxx version using 5 data bytes / 
     non-alternative (standard) output ) 
-]]></Comment>
+]]>
+			</Comment>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>Status</Name>
@@ -47,12 +31,14 @@
 		</DataType>
 		<DataType>
 			<Name GUID="{F2D2AC72-ED5B-FB82-D333-AFF659CBA42A}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
-			<Comment><![CDATA[ This data type is corresponding to the
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
    KL-6xxx data structure used in the
    TwinCAT SystemManager
    (KL-6xxx version using 5 data bytes / 
     non-alternative (standard) output ) 
-]]></Comment>
+]]>
+			</Comment>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>Ctrl</Name>
@@ -72,27 +58,55 @@
 			</SubItem>
 		</DataType>
 		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
 			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
 			<BitSize>8</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
 			<EnumInfo>
-				<Text><![CDATA[EAX5000_P_0275_MEMORY_NONE]]></Text>
+				<Text>
+					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
+				</Text>
 				<Enum>0</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text><![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]></Text>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
+				</Text>
 				<Enum>1</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text><![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]></Text>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
+				</Text>
 				<Enum>2</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text><![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]></Text>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
+				</Text>
 				<Enum>8</Enum>
 			</EnumInfo>
 			<EnumInfo>
-				<Text><![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]></Text>
+				<Text>
+					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
+				</Text>
 				<Enum>16</Enum>
 			</EnumInfo>
 			<Hides>
@@ -147,43 +161,45 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>lcls_twincat_vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
-							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
-							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-						</Var>
-						<Var>
-							<Name>lcls_twincat_vacuum.LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-							<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
-							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-						</Var>
-						<Var>
 							<Name>GVL_COM.stComIn</Name>
-							<Comment><![CDATA[SERIAL IO]]></Comment>
+							<Comment>
+								<![CDATA[SERIAL IO]]>
+							</Comment>
 							<Type GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
 						<Var>
 							<Name>GVL_COM.E2_stComIn</Name>
-							<Comment><![CDATA[SERIAL IO]]></Comment>
+							<Comment>
+								<![CDATA[SERIAL IO]]>
+							</Comment>
 							<Type GUID="{08AF3DC4-091E-9D2E-162D-D348FC75C632}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_01.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_01.i_xFaultNC</Name>
-							<Comment><![CDATA[ Error Active when no Error is present]]></Comment>
+							<Comment>
+								<![CDATA[ Error Active when no Error is present]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_02.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_02.i_xFaultNC</Name>
-							<Comment><![CDATA[ Error]]></Comment>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -196,12 +212,16 @@
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_03.i_xAtSpd</Name>
-							<Comment><![CDATA[ Normaml operation when true]]></Comment>
+							<Comment>
+								<![CDATA[ Normaml operation when true]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_03.i_xFaultNC</Name>
-							<Comment><![CDATA[ Error]]></Comment>
+							<Comment>
+								<![CDATA[ Error]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -225,17 +245,23 @@
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_01.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_02.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_02.q_PumpingStation</Name>
-							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -243,37 +269,71 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL_Devices.PTM_02.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL_Devices.PTM_03.q_RunDO</Name>
-							<Comment><![CDATA[ Start/Stop]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_03.q_PumpingStation</Name>
-							<Comment><![CDATA[ Start/Stop interlock]]></Comment>
+							<Comment>
+								<![CDATA[ Start/Stop interlock]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_Devices.PTM_03.q_xRemote</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_Devices.PTM_03.q_xReset</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="1">
+						<Name>CommTask Inputs</Name>
+						<Var>
+							<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>LCLS_Vacuum.LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+							<Comment>
+								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
-						<Name>PlcTask Retains</Name>
+						<Name>CommTask Retains</Name>
 						<Var>
 							<Name>PMPS_GVL.SuccessfulPreemption</Name>
-							<Comment><![CDATA[ Any time BPTM applies a new BP request which is confirmed]]></Comment>
-							<Type>ULINT</Type>
+							<Comment>
+								<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
+							</Comment>
+							<Type>UDINT</Type>
 							<InOut>7</InOut>
 						</Var>
 						<Var>
 							<Name>PMPS_GVL.AccumulatedFF</Name>
-							<Comment><![CDATA[ Any time a FF occurs]]></Comment>
-							<Type>ULINT</Type>
+							<Comment>
+								<![CDATA[ Any time a FF occurs]]>
+							</Comment>
+							<Type>UDINT</Type>
 							<InOut>7</InOut>
 						</Var>
 					</Vars>
 					<TaskPouOids>
 						<TaskPouOid Prio="21" OTCID="#x08502041"/>
+						<TaskPouOid Prio="20" OTCID="#x08502042"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_PfeifferControl" Id="{731036f1-36a4-4d41-854c-61674db7f8df}">
     <Declaration><![CDATA[TYPE ST_PfeifferControl :
 STRUCT
@@ -23,6 +23,11 @@ STRUCT
 	'}
 	/// pumping station (equivalent to ilk bit for varian) 
 	xPumpingStation_010: BOOL;
+	{attribute 'pytmc' := '
+	pv: SetPumpSpeed;
+	io: i;
+	'}
+	diSetRotationSpeed_309: DINT;
 	/// RUN_DO bit 
 	{attribute 'pytmc' := '
     pv: RUN_DO;
