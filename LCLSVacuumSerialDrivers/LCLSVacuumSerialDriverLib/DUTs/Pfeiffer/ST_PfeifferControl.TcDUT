@@ -27,7 +27,7 @@ STRUCT
 	pv: SetPumpSpeed;
 	io: i;
 	'}
-	diSetRotationSpeed_309: DINT;
+	iSetRotationSpeed_707: INT :=100; /// speed setting in % (normally 100%)
 	/// RUN_DO bit 
 	{attribute 'pytmc' := '
     pv: RUN_DO;
@@ -61,6 +61,7 @@ STRUCT
 	xErrorAck_009: BOOL;
 	/// power consumption setting in % (normally 100%)
 	uiPowerPct_708: UINT;
+	iSetSpdMode_026: INT;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

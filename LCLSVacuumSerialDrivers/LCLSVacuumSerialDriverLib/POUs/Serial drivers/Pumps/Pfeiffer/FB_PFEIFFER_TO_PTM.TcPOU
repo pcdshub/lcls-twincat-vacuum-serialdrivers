@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_PFEIFFER_TO_PTM" Id="{52e32b74-ae54-4ccd-ade3-e43f2f9c5233}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PFEIFFER_TO_PTM
 VAR_IN_OUT
@@ -34,7 +34,7 @@ iq_stPTM.xCommTimeout	:=	iq_stPfeiffer_stat.xTimeout;
 iq_stPTM.i_iErrorCode := iq_stPfeiffer_stat.iErrorCode_303;
 iq_stPTM.i_iWarningCode := iq_stPfeiffer_stat.iWarningCode_303;
 
-(* Check that error acknowledgment is processed *)
+(* Check that error acknowledgment is processed*)
 IF iq_stPfeiffer_stat.xErrorAcknowledged THEN
 	iq_stPfeiffer_stat.xErrorAcknowledged := FALSE;
 	iq_stPfeiffer_ctrl.xErrorAck_009 := FALSE;

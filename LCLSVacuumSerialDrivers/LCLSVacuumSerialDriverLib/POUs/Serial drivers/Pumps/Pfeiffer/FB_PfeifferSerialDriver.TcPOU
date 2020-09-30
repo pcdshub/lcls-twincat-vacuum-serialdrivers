@@ -30,7 +30,7 @@ VAR
 	sSendData: STRING;
 	fbPfeifferTransaction: FB_PfeifferTransaction;
 	fbFormatString: FB_FormatString;
-	diOldSetRotationSpeed_309 :DINT;
+	diOldSetRotationSpeed_707 :DINT;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* This function block performs serial transactions with a Pfeiffer RC400 Pump controller *)
@@ -298,48 +298,94 @@ CASE iStep OF
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			q_stStatus.uiPowerPct_708 := STRING_TO_UINT( fbPfeifferTransaction.q_sResponseData);
 			a_ClearTrans();  (* to provide rising edge for execute *)
-			iStep := 5000; // was 5005, but we don't want to control via serial but via PLC IO, just write the pump speed
+			iStep := 100; // was 5000, but we don't want to control via serial but via PLC IO, just write the pump speed
 		END_IF
 
-	5000: 
-		IF (i_stControl.diSetRotationSpeed_309 <> diOldSetRotationSpeed_309) AND ( i_stControl.diSetRotationSpeed_309 <> 0)  THEN
-			diOldSetRotationSpeed_309 := i_stControl.diSetRotationSpeed_309;
-			iStep := 5001;
+	100: 
+		IF (i_stControl.iSetRotationSpeed_707 <> diOldSetRotationSpeed_707) AND ( i_stControl.iSetRotationSpeed_707 <> 0)  THEN
+			diOldSetRotationSpeed_707 := i_stControl.iSetRotationSpeed_707;
+			iStep := 110;
 		ELSE
 			q_sResult := 'Success';
-			iStep := 8000;
+			iStep := 8000;// maybe should be 5000
 		END_IF
 	
-	5001:(* Update Pump Speed *) (* Acitve Rotation Speed *)
-		fbFormatString( sFormat:= '%.6u', arg1:= F_DINT(i_stControl.diSetRotationSpeed_309), sOut => sSendData);
+	110: (* Set  SpdSetMode: Rotation speed setting mode On*)
+			i_stControl.iSetSpdMode_026:=1;
+			fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.iSetSpdMode_026), sOut => sSendData);
 			fbPfeifferTransaction.i_xExecute:= TRUE;
 			fbPfeifferTransaction.i_xActionCommand:= TRUE;
-			fbPfeifferTransaction.i_iParameterNum:= 309;
+			fbPfeifferTransaction.i_iParameterNum:= 26;
+			fbPfeifferTransaction.i_iDataLength:= 3;
+			fbPfeifferTransaction.i_sSendData:= sSendData;
+		IF fbPfeifferTransaction.q_xError THEN
+			q_sResult := CONCAT('in Step 110 fbPfeifferTransaction failed with message: ', fbPfeifferTransaction.q_sResult);
+			iStep := 9000;
+		ELSIF fbPfeifferTransaction.q_xDone THEN
+			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
+				i_stControl.iSetSpdMode_026 := STRING_TO_INT(fbPfeifferTransaction.q_sResponseData);
+				a_ClearTrans();  (* to provide rising edge for execute *)
+				iStep := 120;
+			ELSE
+				q_sResult := CONCAT('In step 110 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
+				iStep := 9000;
+			END_IF
+		END_IF
+	
+	120:(* Update Pump Speed *) (* SpdSVal % Set value in rot. speed setting mode *)
+			i_stControl.iSetRotationSpeed_707 := i_stControl.iSetRotationSpeed_707 *100; //Datatype 2
+			fbFormatString( sFormat:= '%.6u', arg1:= F_INT(i_stControl.iSetRotationSpeed_707), sOut => sSendData);
+			fbPfeifferTransaction.i_xExecute:= TRUE;
+			fbPfeifferTransaction.i_xActionCommand:= TRUE;
+			fbPfeifferTransaction.i_iParameterNum:= 707;
 			fbPfeifferTransaction.i_iDataLength:= 6;
 			fbPfeifferTransaction.i_sSendData:= sSendData;
 		IF fbPfeifferTransaction.q_xError THEN
-			q_sResult := CONCAT('in Step 5000 fbPfeifferTransaction failed with message: ', fbPfeifferTransaction.q_sResult);
+			q_sResult := CONCAT('in Step 120 fbPfeifferTransaction failed with message: ', fbPfeifferTransaction.q_sResult);
 			iStep := 9000;
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
 			q_stStatus.diActiveRotationSpeed_309 := STRING_TO_DINT( fbPfeifferTransaction.q_sResponseData);
 				a_ClearTrans();  (* to provide rising edge for execute *)
-			    iStep := 5000;
+			    iStep := 130;
 			ELSE
-				q_sResult := CONCAT('In step 5000 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
+				q_sResult := CONCAT('In step 120 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
+				iStep := 9000;
+			END_IF
+		END_IF
+	
+		
+	130: (* Set  SpdSetMode: Rotation speed setting mode Off*)
+			i_stControl.iSetSpdMode_026:=0;
+			fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.iSetSpdMode_026), sOut => sSendData);
+			fbPfeifferTransaction.i_xExecute:= TRUE;
+			fbPfeifferTransaction.i_xActionCommand:= TRUE;
+			fbPfeifferTransaction.i_iParameterNum:= 26;
+			fbPfeifferTransaction.i_iDataLength:= 3;
+			fbPfeifferTransaction.i_sSendData:= sSendData;
+		IF fbPfeifferTransaction.q_xError THEN
+			q_sResult := CONCAT('in Step 110 fbPfeifferTransaction failed with message: ', fbPfeifferTransaction.q_sResult);
+			iStep := 9000;
+		ELSIF fbPfeifferTransaction.q_xDone THEN
+			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
+				i_stControl.iSetSpdMode_026 := STRING_TO_INT(fbPfeifferTransaction.q_sResponseData);
+				a_ClearTrans();  (* to provide rising edge for execute *)
+				iStep := 100;
+			ELSE
+				q_sResult := CONCAT('In step 110 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
 				iStep := 9000;
 			END_IF
 		END_IF
 		
-	5005:(* Check Status vs. requested parameters, set iff necessary *)
+	5000:(* Check Status vs. requested parameters, set iff necessary *)
 		IF i_stControl.xErrorAck_009 THEN
 			iStep := 5030;
 		ELSIF i_stControl.xPumpingStation_010 <> q_stStatus.xPumpingStation_010 THEN
-			iStep := 5010;
+			//iStep := 5010; Done through the PLC DIO
 		ELSIF  i_stControl.iGasMode_027 <> q_stStatus.iGasMode_027 THEN
 			iStep := 5020;
 		ELSIF i_stControl.xMotorPump_023 <> q_stStatus.xMotorPump_023 THEN
-			iStep := 5011;
+			//iStep := 5011;  Done through the PLC DIO
 		ELSIF i_stControl.uiPowerPct_708 <> q_stStatus.uiPowerPct_708 THEN
 			iStep := 5012;
 		ELSE
