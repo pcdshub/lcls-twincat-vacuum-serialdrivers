@@ -323,7 +323,7 @@ CASE iStep OF
 			iStep := 9000;
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
-				i_stControl.iSetSpdMode_026 := STRING_TO_INT(fbPfeifferTransaction.q_sResponseData);
+				q_stStatus.iSetSpdMode_026 := STRING_TO_INT(fbPfeifferTransaction.q_sResponseData);
 				a_ClearTrans();  (* to provide rising edge for execute *)
 				iStep := 120;
 			ELSE
@@ -345,7 +345,7 @@ CASE iStep OF
 			iStep := 9000;
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
-			q_stStatus.diActiveRotationSpeed_309 := STRING_TO_DINT( fbPfeifferTransaction.q_sResponseData);
+			q_stStatus.iSetRotationSpeed_707 := STRING_TO_INT( fbPfeifferTransaction.q_sResponseData);
 				a_ClearTrans();  (* to provide rising edge for execute *)
 			    iStep := 130;
 			ELSE
@@ -368,7 +368,7 @@ CASE iStep OF
 			iStep := 9000;
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
-				i_stControl.iSetSpdMode_026 := STRING_TO_INT(fbPfeifferTransaction.q_sResponseData);
+				q_stStatus.iSetSpdMode_026 := STRING_TO_INT(fbPfeifferTransaction.q_sResponseData);
 				a_ClearTrans();  (* to provide rising edge for execute *)
 				iStep := 100;
 			ELSE

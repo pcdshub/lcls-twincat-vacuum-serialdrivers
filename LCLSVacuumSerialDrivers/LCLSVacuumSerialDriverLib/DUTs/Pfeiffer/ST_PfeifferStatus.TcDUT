@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_PfeifferStatus" Id="{5940fef0-f9c3-48c7-ba29-0570add21519}">
     <Declaration><![CDATA[TYPE ST_PfeifferStatus :
 STRUCT
@@ -105,6 +105,8 @@ STRUCT
 	io: i;
 	'}
 	xTimeout: BOOL;
+	iSetRotationSpeed_707 : INT;
+	iSetSpdMode_026: INT;
 	xErrorAcknowledged: BOOL; //Not actually read back from the pump, but tells us ErrAck has processed
 END_STRUCT
 END_TYPE
