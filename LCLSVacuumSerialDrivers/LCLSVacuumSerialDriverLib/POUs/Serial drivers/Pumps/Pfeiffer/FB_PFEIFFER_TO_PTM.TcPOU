@@ -50,5 +50,9 @@ iq_stPTM.i_xFault := FALSE;
 END_IF
 ]]></ST>
     </Implementation>
+    <LineIds Name="FB_PFEIFFER_TO_PTM">
+      <LineId Id="3" Count="37" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
