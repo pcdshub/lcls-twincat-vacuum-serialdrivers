@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DUTs &mdash; pcdshub/lcls-twincat-vacuum-serialdrivers  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/doctr-versions-menu.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Data Types" href="LCLSVacuumSerialDrivers_Example_epics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pcdshub/lcls-twincat-vacuum-serialdrivers
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">LCLSVacuumSerialDrivers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_pragmas.html">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_boxes.html">Boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_links.html">Links</a></li>
+</ul>
+<p class="caption"><span class="caption-text">LCLSVacuumSerialDriverLib</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_summary.html#symbols">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_epics.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_epics.html#database-records">Database Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_source.html">DUTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_source.html#gvls">GVLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_source.html#pous">POUs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Example</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_Example_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_Example_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_Example_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_Example_summary.html#symbols">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_Example_epics.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LCLSVacuumSerialDrivers_Example_epics.html#database-records">Database Records</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DUTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#gvls">GVLs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-com">GVL_COM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-devices">GVL_Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main">MAIN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-com">PRG_COM</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pcdshub/lcls-twincat-vacuum-serialdrivers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>DUTs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/LCLSVacuumSerialDrivers_Example_source.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="duts">
+<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="gvls">
+<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gvl-com">
+<h2>GVL_COM<a class="headerlink" href="#gvl-com" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
+    <span class="o">//</span> <span class="n">Define</span> <span class="n">COM</span> <span class="n">Ports</span><span class="o">/</span><span class="n">Buffers</span> <span class="n">incl</span><span class="o">.</span> <span class="n">library</span> <span class="n">Tc2_SerialCom</span>
+    <span class="n">SerialRXBuffer</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+    <span class="n">SerialTXBuffer</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Serial</span> <span class="n">Terminal</span>
+    <span class="n">fbSerialLineControl</span><span class="p">:</span> <span class="n">SerialLineControl</span><span class="p">;</span>
+
+    <span class="o">//</span><span class="n">SERIAL</span> <span class="n">IO</span>
+    <span class="p">{</span><span class="n">attribute</span>      <span class="s1">&#39;TcLinkTo&#39;</span>      <span class="o">:=</span>      <span class="s1">&#39;.Status:=TIIB[EL6002]^COM TxPDO-Map Inputs Channel 2^Status;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">0</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">1</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">2</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">3</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">4</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">5</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">6</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">7</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">8</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">9</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">10</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">11</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">12</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">13</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">14</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">15</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">16</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">17</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">18</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">19</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">20</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">stComIn</span>         <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span>  <span class="p">:</span>       <span class="n">EL6inData22B</span><span class="p">;</span>
+            <span class="p">{</span><span class="n">attribute</span>      <span class="s1">&#39;TcLinkTo&#39;</span>      <span class="o">:=</span>      <span class="s1">&#39;.Ctrl:=TIIB[EL6002]^COM RxPDO-Map Outputs Channel 2^Ctrl;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">0</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">1</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">2</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">3</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">4</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">5</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">6</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">7</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">8</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">9</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">10</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">11</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">12</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">13</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">14</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">15</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">16</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">17</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">18</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">19</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">20</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL6002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">stComOut</span>                <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span>  <span class="p">:</span>       <span class="n">EL6outData22B</span><span class="p">;</span>
+
+
+    <span class="o">//</span> <span class="n">Define</span> <span class="n">COM</span> <span class="n">Ports</span><span class="o">/</span><span class="n">Buffers</span> <span class="n">incl</span><span class="o">.</span> <span class="n">library</span> <span class="n">Tc2_SerialCom</span>
+    <span class="n">E2_SerialRXBuffer</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+    <span class="n">E2_SerialTXBuffer</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Serial</span> <span class="n">Terminal</span>
+    <span class="n">E2_fbSerialLineControl</span><span class="p">:</span> <span class="n">SerialLineControl</span><span class="p">;</span>
+
+    <span class="o">//</span><span class="n">SERIAL</span> <span class="n">IO</span>
+    <span class="p">{</span><span class="n">attribute</span>      <span class="s1">&#39;TcLinkTo&#39;</span>      <span class="o">:=</span>      <span class="s1">&#39;.Status:=TIIB[EP6002-0002]^COM TxPDO-Map Inputs Channel 1^Status;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">0</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">1</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">2</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">3</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">4</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">5</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">6</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">7</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">8</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">9</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">10</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">11</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">12</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">13</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">14</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">15</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">16</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">17</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">18</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">19</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">20</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">TxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">In</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">E2_stComIn</span>              <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span>  <span class="p">:</span>       <span class="n">EL6inData22B</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span>      <span class="s1">&#39;TcLinkTo&#39;</span>      <span class="o">:=</span>      <span class="s1">&#39;.Ctrl:=TIIB[EP6002-0002]^COM RxPDO-Map Outputs Channel 1^Ctrl;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">0</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">1</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">2</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">3</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">4</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">5</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">6</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">7</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">8</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">9</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">10</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">11</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">12</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">13</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">14</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">15</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">16</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">17</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">18</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">19</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">20</span><span class="p">;</span>
+                                                             <span class="o">.</span><span class="n">D</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EP6002</span><span class="o">-</span><span class="mi">0002</span><span class="p">]</span><span class="o">^</span><span class="n">COM</span> <span class="n">RxPDO</span><span class="o">-</span><span class="n">Map</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Data</span> <span class="n">Out</span> <span class="mi">21</span><span class="p">;</span>
+                                                             <span class="s1">&#39;}</span>
+    <span class="n">E2_stComOut</span>             <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span>  <span class="p">:</span>       <span class="n">EL6outData22B</span><span class="p">;</span>
+
+
+
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gvl-devices">
+<h2>GVL_Devices<a class="headerlink" href="#gvl-devices" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
+
+    <span class="p">(</span><span class="o">*</span><span class="n">TD20</span><span class="o">*</span><span class="p">)</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">PTM</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">PTM_01</span> <span class="p">:</span> <span class="n">FB_PTM_TurboDrive</span><span class="p">;</span> <span class="o">//</span> <span class="n">PLC</span> <span class="n">IO</span> <span class="n">Interface</span>
+    <span class="n">PTM_01_Serial</span> <span class="p">:</span> <span class="n">FB_Oerlikon_TD20_COM</span><span class="p">;</span> <span class="o">//</span><span class="n">Serial</span> <span class="n">Interface</span>
+
+
+    <span class="p">(</span><span class="o">*</span><span class="n">Pfeiffer</span><span class="o">*</span><span class="p">)</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">PTM</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">PTM_02</span> <span class="p">:</span> <span class="n">FB_PTM_Pfeiffer</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">PTM</span><span class="p">:</span><span class="mi">03</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">PTM_03</span> <span class="p">:</span> <span class="n">FB_PTM_Pfeiffer</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">They</span> <span class="n">share</span> <span class="n">the</span> <span class="n">same</span> <span class="n">serial</span> <span class="n">port</span>
+    <span class="n">st_Pfeiffer_CTRL</span>                        <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">20</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PfeifferControl</span><span class="p">;</span>
+    <span class="n">st_Pfeiffer_RBK</span>                         <span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="mi">20</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PfeifferStatus</span><span class="p">;</span>
+    <span class="n">fb_PfeifferCom</span> <span class="p">:</span> <span class="n">FB_PFEIFFER_COM</span><span class="p">;</span>
+
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pous">
+<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main">
+<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MAIN</span>
+<span class="n">VAR</span>
+<span class="n">END_VAR</span>
+<span class="n">PRG_COM</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Leybold</span> <span class="n">Turbo</span> <span class="n">Drive</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">Instanitate</span> <span class="n">the</span> <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="n">Pump</span> <span class="n">Control</span><span class="o">*</span><span class="p">)</span>
+<span class="n">PTM_01</span><span class="p">(</span><span class="n">i_xExtILKOk</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span> <span class="n">iq_stPtm</span><span class="o">=&gt;</span> <span class="p">);</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">Instanitate</span> <span class="n">the</span> <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="n">serial</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">TD20</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">PTM_01_Serial</span><span class="p">(</span><span class="n">SerialRXBuffer</span> <span class="o">:=</span> <span class="n">SerialRXBuffer</span><span class="p">,</span>
+                            <span class="n">SerialTXBuffer</span><span class="o">:=</span> <span class="n">SerialTXBuffer</span><span class="p">,</span>
+                            <span class="n">astTD20Status</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">Copy</span> <span class="n">Status</span> <span class="n">Pv</span><span class="s1">&#39;s into the PTM structure*)</span>
+<span class="n">PTM_01</span><span class="o">.</span><span class="n">M_Serial_IO</span><span class="p">(</span><span class="n">PTM_01_Serial</span><span class="o">.</span><span class="n">astTD20Status</span><span class="p">);</span>
+
+
+
+
+<span class="o">//</span><span class="n">Pfeiffer</span> <span class="n">Turbo</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">Instanitate</span> <span class="n">the</span> <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="n">Pump</span> <span class="n">Control</span><span class="o">*</span><span class="p">)</span>
+<span class="n">PTM_02</span><span class="p">(</span><span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span> <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+<span class="n">PTM_03</span><span class="p">(</span><span class="n">i_xExtIlkOK</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span> <span class="n">iq_stPTM</span><span class="o">=&gt;</span> <span class="p">);</span>
+
+<span class="p">(</span><span class="o">*</span><span class="n">Assign</span> <span class="n">adresses</span> <span class="n">to</span> <span class="n">the</span> <span class="n">pfeiffer</span> <span class="n">controllers</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">this</span> <span class="n">serial</span> <span class="n">terminal</span><span class="o">*</span><span class="p">)</span>
+<span class="n">st_Pfeiffer_CTRL</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">iSerialAddress</span> <span class="o">:=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">st_Pfeiffer_CTRL</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xEnableComm</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">st_Pfeiffer_CTRL</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">iSerialAddress</span> <span class="o">:=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">st_Pfeiffer_CTRL</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">xEnableComm</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">Instanitate</span> <span class="n">the</span> <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="n">serial</span> <span class="n">communication</span> <span class="k">with</span> <span class="n">Pfeiffer</span><span class="o">*</span><span class="p">)</span>
+<span class="n">fb_PfeifferCom</span><span class="p">(</span><span class="n">astPfeifferControl</span> <span class="o">:=</span> <span class="n">st_Pfeiffer_CTRL</span><span class="p">,</span>
+                       <span class="n">astPfeifferStatus</span><span class="o">:=</span> <span class="n">st_Pfeiffer_RBK</span><span class="p">,</span>
+                            <span class="n">SerialRXBuffer</span><span class="o">:=</span> <span class="n">E2_SerialRXBuffer</span><span class="p">,</span>
+                            <span class="n">SerialTXBuffer</span><span class="o">:=</span> <span class="n">E2_SerialTXBuffer</span><span class="p">);</span>
+
+
+<span class="p">(</span><span class="o">*</span> <span class="n">Copy</span> <span class="n">Status</span> <span class="n">Pv</span><span class="s1">&#39;s into the PTM structure*)</span>
+<span class="n">PTM_02</span><span class="o">.</span><span class="n">M_Serial_IO</span><span class="p">(</span><span class="n">st_Pfeiffer_CTRL</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">st_Pfeiffer_RBK</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">PTM_03</span><span class="o">.</span><span class="n">M_Serial_IO</span><span class="p">(</span><span class="n">st_Pfeiffer_CTRL</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">st_Pfeiffer_RBK</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prg-com">
+<h2>PRG_COM<a class="headerlink" href="#prg-com" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_COM</span>
+<span class="n">VAR</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span><span class="n">needs</span> <span class="n">to</span> <span class="n">run</span> <span class="n">on</span> <span class="n">a</span> <span class="n">seperate</span> <span class="n">task</span>
+<span class="o">//</span><span class="n">PTM_01</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Instanitate</span> <span class="n">Serial</span> <span class="n">port</span> <span class="n">com</span> <span class="n">function</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbSerialLineControl</span><span class="p">(</span>
+    <span class="n">Mode</span><span class="o">:=</span> <span class="n">SERIALLINEMODE_EL6_22B</span><span class="p">,</span>
+    <span class="n">pComIn</span><span class="o">:=</span> <span class="n">ADR</span><span class="p">(</span><span class="n">stComIn</span><span class="p">),</span>
+    <span class="n">pComOut</span><span class="o">:=</span><span class="n">ADR</span><span class="p">(</span><span class="n">stComOut</span><span class="p">),</span>
+    <span class="n">SizeComIn</span><span class="o">:=</span> <span class="n">SIZEOF</span><span class="p">(</span><span class="n">stComIn</span><span class="p">),</span>
+    <span class="n">TxBuffer</span><span class="o">:=</span> <span class="n">SerialTXBuffer</span><span class="p">,</span>
+    <span class="n">RxBuffer</span><span class="o">:=</span> <span class="n">SerialRXBuffer</span><span class="p">,</span>
+    <span class="n">Error</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">ErrorID</span><span class="o">=&gt;</span> <span class="p">);</span>
+
+
+<span class="o">//</span><span class="n">PTM_02</span> <span class="ow">and</span> <span class="n">PTM_03</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Instanitate</span> <span class="n">Serial</span> <span class="n">port</span> <span class="n">com</span> <span class="n">function</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">E2_fbSerialLineControl</span><span class="p">(</span>
+    <span class="n">Mode</span><span class="o">:=</span> <span class="n">SERIALLINEMODE_EL6_22B</span><span class="p">,</span>
+    <span class="n">pComIn</span><span class="o">:=</span> <span class="n">ADR</span><span class="p">(</span><span class="n">E2_stComIn</span><span class="p">),</span>
+    <span class="n">pComOut</span><span class="o">:=</span><span class="n">ADR</span><span class="p">(</span><span class="n">E2_stComOut</span><span class="p">),</span>
+    <span class="n">SizeComIn</span><span class="o">:=</span> <span class="n">SIZEOF</span><span class="p">(</span><span class="n">E2_stComIn</span><span class="p">),</span>
+    <span class="n">TxBuffer</span><span class="o">:=</span> <span class="n">E2_SerialTXBuffer</span><span class="p">,</span>
+    <span class="n">RxBuffer</span><span class="o">:=</span> <span class="n">E2_SerialRXBuffer</span><span class="p">,</span>
+    <span class="n">Error</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">ErrorID</span><span class="o">=&gt;</span> <span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="LCLSVacuumSerialDrivers_Example_epics.html" class="btn btn-neutral float-left" title="Data Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, SLAC National Accelerator Laboratory
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
