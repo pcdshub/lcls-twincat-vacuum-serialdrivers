@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="MAIN" Id="{fbabf7ba-863e-4672-ba2a-2b621c5d036c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -41,8 +41,8 @@ fb_PfeifferCom(astPfeifferControl := st_Pfeiffer_CTRL,
 				
 
 (* Copy Status Pv's into the PTM structure*)
-PTM_02.M_Serial_IO(st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK[1]);
-PTM_03.M_Serial_IO(st_Pfeiffer_CTRL[2],st_Pfeiffer_RBK[2]);
+PTM_02.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK[1]);
+PTM_03.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL[2],st_Pfeiffer_RBK:=st_Pfeiffer_RBK[2]);
 	
 
 ]]></ST>
