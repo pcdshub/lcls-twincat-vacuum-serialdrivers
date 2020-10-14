@@ -36,7 +36,7 @@ Libraries
     :header: Library, Vendor, Default, Version
     :align: center
 
-        LCLS Vacuum, SLAC - LCLS, Unset, Unset
+        LCLS Vacuum, SLAC - LCLS, Unset, 0.0.0
         LCLSVacuumSerialDriverLib, SLAC - LCLS, Unset, Unset
         Tc2_SerialCom, Beckhoff Automation GmbH, Unset, 
         Tc2_Standard, Beckhoff Automation GmbH, Unset, 

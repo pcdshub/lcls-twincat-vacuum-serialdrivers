@@ -216,8 +216,8 @@ MAIN
     				
 
     (* Copy Status Pv's into the PTM structure*)
-    PTM_02.M_Serial_IO(st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK[1]);
-    PTM_03.M_Serial_IO(st_Pfeiffer_CTRL[2],st_Pfeiffer_RBK[2]);
+    PTM_02.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK[1]);
+    PTM_03.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL[2],st_Pfeiffer_RBK:=st_Pfeiffer_RBK[2]);
 
     END_PROGRAM
 
