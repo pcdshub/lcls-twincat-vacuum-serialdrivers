@@ -19,7 +19,7 @@ iq_stPTM.q_xRemote := iq_stOerlikon_stat.wStatusWord.15; (* Remote control enabl
 iq_stPTM.i_diCurSpd := WORD_TO_DINT(iq_stOerlikon_stat.wFrequency_P3);
 iq_stPTM.i_diPwr := WORD_TO_DINT(iq_stOerlikon_stat.wMotorCurrent_P5 * iq_stOerlikon_stat.wVoltage_P4);
 iq_stPTM.i_diElecTemp := WORD_TO_DINT(iq_stOerlikon_stat.wConverterTemp_P11);
-iq_stPTM.i_diPumpTemp := WORD_TO_DINT(iq_stOerlikon_stat.wPumpTemp_P127);
+//iq_stPTM.i_diPumpTemp := WORD_TO_DINT(iq_stOerlikon_stat.wPumpTemp_P127);
 
 (* Faults and warnings *)
 //iq_stPTM.xFault := iq_stOerlikon_stat.wStatusWord.3;
@@ -28,9 +28,5 @@ iq_stPTM.i_xTempFault := iq_stOerlikon_stat.wStatusWord.7; (* specified as a tem
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_OERLIKON_TO_PTM">
-      <LineId Id="3" Count="17" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
