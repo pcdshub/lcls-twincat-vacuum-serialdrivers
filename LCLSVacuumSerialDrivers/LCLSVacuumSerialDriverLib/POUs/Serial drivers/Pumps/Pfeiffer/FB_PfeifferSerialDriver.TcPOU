@@ -298,21 +298,26 @@ CASE iStep OF
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			q_stStatus.uiPowerPct_708 := STRING_TO_UINT( fbPfeifferTransaction.q_sResponseData);
 			a_ClearTrans();  (* to provide rising edge for execute *)
-			iStep := 100; // was 5000, but we don't want to control via serial but via PLC IO, just write the pump speed
+			iStep := 110; // was 5000, but we don't want to control via serial but via PLC IO, just write the pump speed
 		END_IF
 
 	100: 
-		IF (i_stControl.iSetRotationSpeed_707 <> diOldSetRotationSpeed_707) AND ( i_stControl.iSetRotationSpeed_707 <> 0)  THEN
+		(*IF (i_stControl.iSetRotationSpeed_707 <> diOldSetRotationSpeed_707) AND ( i_stControl.iSetRotationSpeed_707 <> 0)  THEN
 			diOldSetRotationSpeed_707 := i_stControl.iSetRotationSpeed_707;
 			iStep := 110;
 		ELSE
 			q_sResult := 'Success';
 			iStep := 8000;// maybe should be 5000
-		END_IF
+		END_IF*)
 	
-	110: (* Set  SpdSetMode: Rotation speed setting mode On*)
-			i_stControl.iSetSpdMode_026:=1;
-			fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.iSetSpdMode_026), sOut => sSendData);
+	110: (* Set  SpdSetMode: Rotation speed setting mode*)
+		IF i_stControl.xSetSpdMode_026 THEN
+			sSendData := '001';
+		ELSE
+			sSendData := '000';
+		END_IF
+			//i_stControl.iSetSpdMode_026:=1;
+			//fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.iSetSpdMode_026), sOut => sSendData);
 			fbPfeifferTransaction.i_xExecute:= TRUE;
 			fbPfeifferTransaction.i_xActionCommand:= TRUE;
 			fbPfeifferTransaction.i_iParameterNum:= 26;
@@ -347,7 +352,7 @@ CASE iStep OF
 			IF fbPfeifferTransaction.q_sResponseData = sSendData THEN
 			q_stStatus.iSetRotationSpeed_707 := STRING_TO_INT( fbPfeifferTransaction.q_sResponseData);
 				a_ClearTrans();  (* to provide rising edge for execute *)
-			    iStep := 130;
+			    iStep := 8000;
 			ELSE
 				q_sResult := CONCAT('In step 120 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
 				iStep := 9000;
@@ -356,7 +361,7 @@ CASE iStep OF
 	
 		
 	130: (* Set  SpdSetMode: Rotation speed setting mode Off*)
-			i_stControl.iSetSpdMode_026:=0;
+		(*	i_stControl.iSetSpdMode_026:=0;
 			fbFormatString( sFormat:= '%.3u', arg1:= F_INT(i_stControl.iSetSpdMode_026), sOut => sSendData);
 			fbPfeifferTransaction.i_xExecute:= TRUE;
 			fbPfeifferTransaction.i_xActionCommand:= TRUE;
@@ -375,7 +380,7 @@ CASE iStep OF
 				q_sResult := CONCAT('In step 110 invalid data returned from Pfeiffer: ', fbPfeifferTransaction.q_sResponseData);
 				iStep := 9000;
 			END_IF
-		END_IF
+		END_IF*)
 		
 	5000:(* Check Status vs. requested parameters, set iff necessary *)
 		IF i_stControl.xErrorAck_009 THEN
@@ -554,17 +559,5 @@ fbPfeifferTransaction.i_iDataLength:= 0;
 fbPfeifferTransaction.i_sSendData:= '';]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_PfeifferSerialDriver">
-      <LineId Id="3" Count="496" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_PfeifferSerialDriver._A_ClearStatus">
-      <LineId Id="2" Count="7" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_PfeifferSerialDriver.a_ClearTrans">
-      <LineId Id="2" Count="3" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
