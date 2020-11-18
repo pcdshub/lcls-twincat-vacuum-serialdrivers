@@ -33,163 +33,7 @@ LCLS_Vacuum.LCLS_General.FB_LogMessage
       - | io: input
 
 
-               
-LCLS_Vacuum.LCLSVacuumSerialDriverLib.L2SI_Vacuum_Library.ST_VG
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-    :align: center
-
-    * - Record
-      - Type
-      - Description
-      - Pragma
-    * - $(PREFIX):AT_VAC_RBV
-      - bi
-      - $(SYMBOL).xAT_VAC
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):DISC_ACTIVE_RBV
-      - bi
-      - $(SYMBOL).i_xDisc_Active
-      - | field: ONAM DISC ACTIVE
-        | field: ZNAM NO DISC
-        | io: input
-
-
-    * - $(PREFIX):HV_DIS_DO_RBV
-      - bi
-      - $(SYMBOL).q_xHV_DIS
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):HV_ON_RBV
-      - bi
-      - $(SYMBOL).i_xHV_ON
-      - | io: input
-
-
-    * - $(PREFIX):HV_SW
-      - bo
-      - $(SYMBOL).xHV_SW
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):HV_SW_RBV
-      - bi
-      - $(SYMBOL).xHV_SW
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):ILK_OK_RBV
-      - bi
-      - $(SYMBOL).xILKOk
-      - | field: ONAM OK
-        | field: ZNAM NOT OK
-        | io: input
-
-
-    * - $(PREFIX):PRESS_AI_RBV
-      - longin
-      - $(SYMBOL).i_iPRESS_R
-      - | io: input
-
-
-    * - $(PREFIX):PRESS_OK_RBV
-      - bi
-      - $(SYMBOL).xPRESS_OK
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: input
-
-
-    * - $(PREFIX):PRESS_RBV
-      - ai
-      - $(SYMBOL).rPRESS
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):PRO_SP
-      - ao
-      - $(SYMBOL).rPRO_SP
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):PRO_SP_RBV
-      - ai
-      - $(SYMBOL).rPRO_SP
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):SP_HYS
-      - ao
-      - $(SYMBOL).rHYS_PR
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):SP_HYS_RBV
-      - ai
-      - $(SYMBOL).rHYS_PR
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):STATE_RBV
-      - mbbi
-      - $(SYMBOL).eState
-      - | io: input
-
-
-    * - $(PREFIX):VAC_SP
-      - ao
-      - $(SYMBOL).rVAC_SP
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):VAC_SP_RBV
-      - ai
-      - $(SYMBOL).rVAC_SP
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-  
+   
 LCLS_Vacuum.PMPS.ST_BeamParams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -279,7 +123,7 @@ LCLS_Vacuum.PMPS.ST_PMPS_Aperture
         | io: input
 
 
-  
+               
 LCLS_Vacuum.ST_VG
 ^^^^^^^^^^^^^^^^^
 
@@ -497,7 +341,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                     
+                   
 Database Records
 ----------------
 

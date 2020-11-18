@@ -7,7 +7,6 @@ Pragmas
     :align: center
 
     :ref:`LCLSVacuumSerialDriverLib <LCLSVacuumSerialDriverLib_overview_pragmas>`, 0, 0
-    :ref:`Example <Example_overview_pragmas>`, 7, 0
 
 
 .. _LCLSVacuumSerialDriverLib_overview_pragmas:
@@ -17,17 +16,6 @@ LCLSVacuumSerialDriverLib
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Total pragmas found: 0
-Total linter errors: 0
-
-
-
-.. _Example_overview_pragmas:
-
-
-Example
-^^^^^^^
-
-Total pragmas found: 7
 Total linter errors: 0
 
 

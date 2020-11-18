@@ -19,14 +19,6 @@ lcls-twincat-vacuum-serialdrivers
     LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_epics
     LCLSVacuumSerialDrivers_LCLSVacuumSerialDriverLib_source
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Example
-
-    LCLSVacuumSerialDrivers_Example_summary
-    LCLSVacuumSerialDrivers_Example_epics
-    LCLSVacuumSerialDrivers_Example_source
-
 
 
 Indices and tables
