@@ -298,7 +298,7 @@ CASE iStep OF
 		ELSIF fbPfeifferTransaction.q_xDone THEN
 			q_stStatus.uiPowerPct_708 := STRING_TO_UINT( fbPfeifferTransaction.q_sResponseData);
 			a_ClearTrans();  (* to provide rising edge for execute *)
-			iStep := 110; // was 5000, but we don't want to control via serial but via PLC IO, just write the pump speed
+			iStep := 8000;// this step not tested 110; // was 5000, but we don't want to control via serial but via PLC IO, just write the pump speed
 		END_IF
 
 	100: 
