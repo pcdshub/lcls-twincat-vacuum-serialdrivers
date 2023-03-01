@@ -3,7 +3,7 @@ Data Types
 ----------
 
 
-   
+  
 LCLS_Vacuum.LCLS_General.FB_LogMessage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -45,23 +45,121 @@ LCLS_Vacuum.PMPS.ST_BeamParams
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):Apt:01:Height_RBV
+      - ai
+      - $(SYMBOL).astApertures[1].Height
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:01:OK_RBV
+      - bi
+      - $(SYMBOL).astApertures[1].xOK
+      - | io: input
+
+
+    * - $(PREFIX):Apt:01:Width_RBV
+      - ai
+      - $(SYMBOL).astApertures[1].Width
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:02:Height_RBV
+      - ai
+      - $(SYMBOL).astApertures[2].Height
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:02:OK_RBV
+      - bi
+      - $(SYMBOL).astApertures[2].xOK
+      - | io: input
+
+
+    * - $(PREFIX):Apt:02:Width_RBV
+      - ai
+      - $(SYMBOL).astApertures[2].Width
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:03:Height_RBV
+      - ai
+      - $(SYMBOL).astApertures[3].Height
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:03:OK_RBV
+      - bi
+      - $(SYMBOL).astApertures[3].xOK
+      - | io: input
+
+
+    * - $(PREFIX):Apt:03:Width_RBV
+      - ai
+      - $(SYMBOL).astApertures[3].Width
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:04:Height_RBV
+      - ai
+      - $(SYMBOL).astApertures[4].Height
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Apt:04:OK_RBV
+      - bi
+      - $(SYMBOL).astApertures[4].xOK
+      - | io: input
+
+
+    * - $(PREFIX):Apt:04:Width_RBV
+      - ai
+      - $(SYMBOL).astApertures[4].Width
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):BeamClass_RBV
+      - longin
+      - $(SYMBOL).nBeamClass
+      - | io: input
+
+
+    * - $(PREFIX):BeamClassRanges_RBV
+      - longin
+      - $(SYMBOL).nBCRange
+      - | io: input
+
+
     * - $(PREFIX):Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - $(PREFIX):PhotonEnergyRanges_RBV
+    * - $(PREFIX):eVRanges_RBV
       - longin
       - $(SYMBOL).neVRange
       - | field: EGU eV
         | io: input
 
 
-    * - $(PREFIX):PulseEnergy_RBV
+    * - $(PREFIX):MachineMode_RBV
+      - longin
+      - $(SYMBOL).nMachineMode
+      - | io: input
+
+
+    * - $(PREFIX):PhotonEnergy_RBV
       - ai
-      - This beam parameter is non-op for now.
-      - | field: EGU mJ
+      - $(SYMBOL).neV
+      - | field: EGU eV
         | io: input
 
 
@@ -72,22 +170,24 @@ LCLS_Vacuum.PMPS.ST_BeamParams
         | io: input
 
 
-    * - $(PREFIX):ST_RBV
-      - waveform
-      - $(SYMBOL).aStoppers
-      - | io: input
-
-
     * - $(PREFIX):Transmission_RBV
-      - longin
+      - ai
       - $(SYMBOL).nTran
-      - | field: EGU %
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
         | io: input
 
 
     * - $(PREFIX):Valid_RBV
       - bi
       - $(SYMBOL).xValid
+      - | io: input
+
+
+    * - $(PREFIX):Veto_RBV
+      - waveform
+      - $(SYMBOL).aVetoDevices
       - | io: input
 
 
@@ -141,6 +241,28 @@ LCLS_Vacuum.ST_VG
       - | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
+
+
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).iAutoOnTimer
+      - | io: input
 
 
     * - $(PREFIX):DISC_ACTIVE_RBV
@@ -281,9 +403,9 @@ LCLS_Vacuum.ST_VG
         | field: ONST GaugeDisconnected
         | field: SVST ValidLo
         | field: SXST ValidHi
-        | field: THST Off
+        | field: THST PressInvalid
         | field: TWST OoR
-        | field: ZRST PressInvalid
+        | field: ZRST Off
         | io: input
 
 
@@ -309,7 +431,7 @@ LCLS_Vacuum.ST_VG
         | io: output
 
 
-                                  
+                                         
 ST_PMPS_Aperture_IO
 ^^^^^^^^^^^^^^^^^^^
 
@@ -341,7 +463,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                   
+                    
 Database Records
 ----------------
 
