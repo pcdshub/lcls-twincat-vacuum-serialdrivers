@@ -98,6 +98,9 @@
     <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_OERLIKON_TD400_COM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_OERLIKON_TD400_TO_PTM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_TD400SerialDriver.TcPOU">
       <SubType>Code</SubType>
     </Compile>

@@ -113,20 +113,10 @@ CASE iStep OF
 		END_IF
 
     40:(* get P24 *)
-        IF bSetFreq THEN
-            fbTD400Transaction.i_wPKE := 16#2000 OR 24;
-            fbTD400Transaction.i_bIND := 0;
-            fbTD400Transaction.i_dwPWE := WORD_TO_DWORD(i_stControl.wSetSetpointFreq_P24);
-            //fbTD400Transaction.i_dwPWE := 0;
-            fbTD400Transaction.i_xExecute := TRUE;
-            bSetFreq := FALSE;
-        ELSE
-            fbTD400Transaction.i_wPKE := 16#1000 OR 24;
-            fbTD400Transaction.i_bIND := 0;
-            fbTD400Transaction.i_dwPWE := 0;
-            fbTD400Transaction.i_xExecute := TRUE;
-        END_IF
-
+        fbTD400Transaction.i_wPKE := 16#1000 OR 24;
+        fbTD400Transaction.i_bIND := 0;
+        fbTD400Transaction.i_dwPWE := 0;
+        fbTD400Transaction.i_xExecute := TRUE;
         IF fbTD400Transaction.q_xError THEN
             iCatch := iCatch +1;
             a_TransactionErrorMesg();
