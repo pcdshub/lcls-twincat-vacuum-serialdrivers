@@ -3,17 +3,17 @@
   <POU Name="F_CalcTD400Checksum" Id="{78a78f8f-5f94-4917-91dd-6746146c5f0e}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION F_CalcTD400Checksum : BYTE
 VAR_INPUT
-	i_abData: ARRAY[0..23] OF BYTE;
+    i_abData: ARRAY[0..23] OF BYTE;
 END_VAR
 VAR
-	bChecksum: BYTE;
-	i: INT;
+    bChecksum: BYTE;
+    i: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[bChecksum := i_abData[0];
 FOR i:=1 TO 22 DO
-	bChecksum := bChecksum XOR i_abData[i];
+    bChecksum := bChecksum XOR i_abData[i];
 END_FOR
 F_CalcTD400Checksum := bChecksum;]]></ST>
     </Implementation>

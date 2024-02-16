@@ -3,12 +3,12 @@
   <POU Name="FB_OERLIKON_TD400_TO_PTM" Id="{baf7e8bc-1486-4fb9-99c8-79be208378ac}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_OERLIKON_TD400_TO_PTM
 VAR_IN_OUT
-	iq_stPTM: ST_LeyboldPTM;
-	iq_stTD400Status: ST_TD400Status;
+    iq_stPTM: ST_LeyboldPTM;
+    iq_stTD400Status: ST_TD400Status;
     iq_stTD400Control: ST_TD400Control;
 END_VAR
 VAR
-	nOldSetSetpointFreq_P24: WORD;
+    nOldSetSetpointFreq_P24: WORD;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* This function block is used to map the IO points from the Oerlikon TD400 structures

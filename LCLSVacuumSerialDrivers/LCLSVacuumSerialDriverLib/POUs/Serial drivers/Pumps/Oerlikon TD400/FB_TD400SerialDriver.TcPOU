@@ -36,13 +36,13 @@ VAR
     sDriverErrMesg		: STRING := 'In step %d FB_TD20SerialDriver failed with unexpected PKE reply: %X';
     i : INT := 1;
     bSetFreq :BOOL;
-	nOldSetSetpointFreq_P24: WORD;
+    nOldSetSetpointFreq_P24: WORD;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* This function block performs serial transactions with a Oerlikon TD20 Pump controller *)
 IF nOldSetSetpointFreq_P24 <> i_stControl.wSetSetpointFreq_P24 THEN
-	nOldSetSetpointFreq_P24 := i_stControl.wSetSetpointFreq_P24;
+    nOldSetSetpointFreq_P24 := i_stControl.wSetSetpointFreq_P24;
     bSetFreq := TRUE;
 END_IF
 
@@ -92,25 +92,25 @@ CASE iStep OF
             fbTD400Transaction.i_dwPWE := WORD_TO_DWORD(i_stControl.wSetSetpointFreq_P24);
             fbTD400Transaction.i_xExecute := TRUE;
 
-        	IF fbTD400Transaction.q_xError THEN
-            	iCatch := iCatch +1;
-            	a_TransactionErrorMesg();
-            	iStep := 9000;
-				bSetFreq := FALSE;
-        	ELSIF fbTD400Transaction.q_xDone THEN
-            	fbTD400Transaction.i_xExecute := FALSE;
-				bSetFreq := FALSE;
-            	IF fbTD400Transaction.q_wPKE = (16#1000 OR 24) THEN
-                	q_stStatus.wSetpointFreq_P24 := DWORD_TO_WORD(fbTD400Transaction.q_dwPWE);
-                	iStep := iStep + 10;
-            	ELSE
-                	a_DriverErrorMesg();
-                	iStep := 9100;
-            	END_IF
-        	END_IF
-		ELSE
-			iStep := iStep + 10;
-		END_IF
+            IF fbTD400Transaction.q_xError THEN
+                iCatch := iCatch +1;
+                a_TransactionErrorMesg();
+                iStep := 9000;
+                bSetFreq := FALSE;
+            ELSIF fbTD400Transaction.q_xDone THEN
+                fbTD400Transaction.i_xExecute := FALSE;
+                bSetFreq := FALSE;
+                IF fbTD400Transaction.q_wPKE = (16#1000 OR 24) THEN
+                    q_stStatus.wSetpointFreq_P24 := DWORD_TO_WORD(fbTD400Transaction.q_dwPWE);
+                    iStep := iStep + 10;
+                ELSE
+                    a_DriverErrorMesg();
+                    iStep := 9100;
+                END_IF
+            END_IF
+        ELSE
+            iStep := iStep + 10;
+        END_IF
 
     40:(* get P24 *)
         fbTD400Transaction.i_wPKE := 16#1000 OR 24;
@@ -264,20 +264,20 @@ q_stStatus.wErrorCode_P171 := 0;]]></ST>
     </Action>
     <Action Name="a_DriverErrorMesg" Id="{5d515955-b6a7-4b04-afb7-0c8a01f121f7}">
       <Implementation>
-        <ST><![CDATA[fbFormatString( sformat:=sDriverErrMesg, 
-	arg1:=F_INT(iStep), 
-	arg2:=F_WORD(fbTD400Transaction.q_wPKE),
-	sOut => q_sResult);
+        <ST><![CDATA[fbFormatString( sformat:=sDriverErrMesg,
+    arg1:=F_INT(iStep),
+    arg2:=F_WORD(fbTD400Transaction.q_wPKE),
+    sOut => q_sResult);
 
 a_ClearStatus();]]></ST>
       </Implementation>
     </Action>
     <Action Name="a_TransactionErrorMesg" Id="{fa0b8d18-9e36-4e93-8f52-7a9ee07ab715}">
       <Implementation>
-        <ST><![CDATA[fbFormatString( sformat:=sTransactionErrMesg, 
-	arg1:=F_INT(iStep), 
-	arg2:=F_STRING(fbTD400Transaction.q_sResult),
-	sOut => q_sResult);
+        <ST><![CDATA[fbFormatString( sformat:=sTransactionErrMesg,
+    arg1:=F_INT(iStep),
+    arg2:=F_STRING(fbTD400Transaction.q_sResult),
+    sOut => q_sResult);
 
 a_ClearStatus();
 q_xTimeout := fbTD400Transaction.q_xTimeout;]]></ST>

@@ -3,55 +3,55 @@
   <DUT Name="ST_SerLVC4000" Id="{1ecc4b20-fded-4e3a-82c1-cf810d73e466}">
     <Declaration><![CDATA[TYPE ST_SerLVC4000 :
 STRUCT
-	(* Readbacks *)
-	{attribute 'pytmc' := '
+    (* Readbacks *)
+    {attribute 'pytmc' := '
     pv: voltage;
-	io: i;
+    io: i;
     '}
-	i_iOut	:	INT; //Output voltage
-	(* Controls *)
-	{attribute 'pytmc' := '
+    i_iOut	:	INT; //Output voltage
+    (* Controls *)
+    {attribute 'pytmc' := '
     pv: ADC_COEFF;
-	io: io;
+    io: io;
     '}
-	q_rADCsl	:	REAL; //ADC slope coeff
-	{attribute 'pytmc' := '
+    q_rADCsl	:	REAL; //ADC slope coeff
+    {attribute 'pytmc' := '
     pv: ADC_OFFSET;
-	io: io;
+    io: io;
     '}
-	q_rADCos	:	REAL; //ADC offset
-	{attribute 'pytmc' := '
+    q_rADCos	:	REAL; //ADC offset
+    {attribute 'pytmc' := '
     pv: CALIB_SET;
-	io: io;
+    io: io;
     '}
-	q_xCal	:	BOOL; //Activate calibration mode
-	{attribute 'pytmc' := '
+    q_xCal	:	BOOL; //Activate calibration mode
+    {attribute 'pytmc' := '
     pv: DISP_SET;
-	io: io;
+    io: io;
     '}
-	q_xFull	:	BOOL; //Set full displacement during calibration
-	{attribute 'pytmc' := '
+    q_xFull	:	BOOL; //Set full displacement during calibration
+    {attribute 'pytmc' := '
     pv: ZERO_SET;
-	io: io;
+    io: io;
     '}
-	q_xZero	:	BOOL; //Set zero during calibration
-	{attribute 'pytmc' := '
+    q_xZero	:	BOOL; //Set zero during calibration
+    {attribute 'pytmc' := '
     pv: GAIN_SET;
-	io: io;
+    io: io;
     '}
-	q_iGain	:	INT; //Set instrument gain
-	{attribute 'pytmc' := '
+    q_iGain	:	INT; //Set instrument gain
+    {attribute 'pytmc' := '
     pv: CALIB_ABORT;
-	io: io;
+    io: io;
     '}
-	q_xAbortCal	:	BOOL; //Abort calibration mode
-	(* Internal params *)
-	{attribute 'pytmc' := '
+    q_xAbortCal	:	BOOL; //Abort calibration mode
+    (* Internal params *)
+    {attribute 'pytmc' := '
     pv: ADDR;
-	io: io;
+    io: io;
     '}
-	iAddr	:	INT; //RS485 address
-	xTimeout	:	BOOL; //Timeout (true if no comm)
+    iAddr	:	INT; //RS485 address
+    xTimeout	:	BOOL; //Timeout (true if no comm)
 END_STRUCT
 END_TYPE
 ]]></Declaration>
