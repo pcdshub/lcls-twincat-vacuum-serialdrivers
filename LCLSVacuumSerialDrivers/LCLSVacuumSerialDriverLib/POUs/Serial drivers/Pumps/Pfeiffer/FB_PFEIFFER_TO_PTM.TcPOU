@@ -3,10 +3,10 @@
   <POU Name="FB_PFEIFFER_TO_PTM" Id="{52e32b74-ae54-4ccd-ade3-e43f2f9c5233}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PFEIFFER_TO_PTM
 VAR_IN_OUT
-	{attribute 'pytmc' :=' pv:'}
-	iq_stPTM: ST_PfeifferPTM;
-	iq_stPfeiffer_ctrl: ST_PfeifferControl;
-	iq_stPfeiffer_stat: ST_PfeifferStatus;
+    {attribute 'pytmc' :=' pv:'}
+    iq_stPTM: ST_PfeifferPTM;
+    iq_stPfeiffer_ctrl: ST_PfeifferControl;
+    iq_stPfeiffer_stat: ST_PfeifferStatus;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -36,13 +36,13 @@ iq_stPTM.i_iWarningCode := iq_stPfeiffer_stat.iWarningCode_303;
 
 (* Check that error acknowledgment is processed*)
 IF iq_stPfeiffer_stat.xErrorAcknowledged THEN
-	iq_stPfeiffer_stat.xErrorAcknowledged := FALSE;
-	iq_stPfeiffer_ctrl.xErrorAck_009 := FALSE;
-	iq_stPTM.xResetSW := FALSE;
+    iq_stPfeiffer_stat.xErrorAcknowledged := FALSE;
+    iq_stPfeiffer_ctrl.xErrorAck_009 := FALSE;
+    iq_stPTM.xResetSW := FALSE;
 END_IF
 
 IF iq_stPfeiffer_stat.sErrorCode_303 = '' THEN
-	;
+    ;
 ELSIF iq_stPfeiffer_stat.sErrorCode_303 <> '000000' THEN
 iq_stPTM.i_xFault := TRUE;
 ELSE
@@ -50,9 +50,5 @@ iq_stPTM.i_xFault := FALSE;
 END_IF
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_PFEIFFER_TO_PTM">
-      <LineId Id="3" Count="37" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

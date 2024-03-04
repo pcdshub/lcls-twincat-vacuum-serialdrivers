@@ -3,18 +3,18 @@
   <POU Name="F_CalcPfeifferCheckSum" Id="{16130ab7-d093-4369-b333-020b7bba7100}">
     <Declaration><![CDATA[FUNCTION F_CalcPfeifferCheckSum : BYTE
 VAR_INPUT
-	sData: STRING;
+    sData: STRING;
 END_VAR
 VAR
-	bSum: BYTE;
-	i: INT;
+    bSum: BYTE;
+    i: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[bSum := 0;
 
 FOR i := 1 TO LEN(sData) DO
-	bSum := bSum + F_ToASC(MID(sData,1,i));
+    bSum := bSum + F_ToASC(MID(sData,1,i));
 END_FOR
 
 F_CalcPfeifferChecksum := bSum;]]></ST>

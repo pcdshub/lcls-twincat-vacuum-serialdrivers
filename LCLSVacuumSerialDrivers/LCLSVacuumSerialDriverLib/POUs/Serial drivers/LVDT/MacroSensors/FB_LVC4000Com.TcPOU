@@ -14,17 +14,17 @@ Also pass the number of LVC-4000 connected to the bus. This must be less than gc
 
 *)
 VAR_IN_OUT
-	iq_astLVC4000: ARRAY[1..gcMaxLVC4000] OF ST_SerLVC4000;
-	afbLVC4000SerialDriver: ARRAY[1..gcMaxLVC4000] OF FB_LVC4000SerialDriver;
-	SerialRXBuffer: ComBuffer;
-	SerialTXBuffer: ComBuffer;
+    iq_astLVC4000: ARRAY[1..gcMaxLVC4000] OF ST_SerLVC4000;
+    afbLVC4000SerialDriver: ARRAY[1..gcMaxLVC4000] OF FB_LVC4000SerialDriver;
+    SerialRXBuffer: ComBuffer;
+    SerialTXBuffer: ComBuffer;
 END_VAR
 VAR_INPUT
-	i_iQty	:	INT := 0;
+    i_iQty	:	INT := 0;
 END_VAR
 VAR
-	iUnit: INT := 1;
-	tTimeOut: TIME := TIME#1s0ms;
+    iUnit: INT := 1;
+    tTimeOut: TIME := TIME#1s0ms;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* This program is called from Serial PTM IO *)
@@ -33,23 +33,23 @@ i_iQty := MIN(i_iQty, gcMaxLVC4000);
 
 (* scan the units one at a time *)
 afbLVC4000SerialDriver[iUnit](
-	i_xExecute:= TRUE,
-	i_tTimeOut:= tTimeOut,
-	iq_stLVC4000:=iq_astLVC4000[iUnit] ,
-	iq_stSerialRXBuffer:= SerialRXBuffer,
-	iq_stSerialTXBuffer:=  SerialTXBuffer,
-	);
+    i_xExecute:= TRUE,
+    i_tTimeOut:= tTimeOut,
+    iq_stLVC4000:=iq_astLVC4000[iUnit] ,
+    iq_stSerialRXBuffer:= SerialRXBuffer,
+    iq_stSerialTXBuffer:=  SerialTXBuffer,
+    );
 
-IF afbLVC4000SerialDriver[iUnit].q_xDone 
+IF afbLVC4000SerialDriver[iUnit].q_xDone
 OR afbLVC4000SerialDriver[iUnit].q_xError
 THEN
-		(* reset for next time *)
-		afbLVC4000SerialDriver[iUnit]( i_xExecute:= FALSE, iq_stLVC4000:=iq_astLVC4000[iUnit], iq_stSerialRXBuffer:= SerialRXBuffer, iq_stSerialTXBuffer:=  SerialTXBuffer);
-		(* select next pump *)
-		iUnit := iUnit + 1;
-		IF iUnit > i_iQty THEN
-			iUnit:= 1;
-		END_IF
+        (* reset for next time *)
+        afbLVC4000SerialDriver[iUnit]( i_xExecute:= FALSE, iq_stLVC4000:=iq_astLVC4000[iUnit], iq_stSerialRXBuffer:= SerialRXBuffer, iq_stSerialTXBuffer:=  SerialTXBuffer);
+        (* select next pump *)
+        iUnit := iUnit + 1;
+        IF iUnit > i_iQty THEN
+            iUnit:= 1;
+        END_IF
 END_IF]]></ST>
     </Implementation>
   </POU>

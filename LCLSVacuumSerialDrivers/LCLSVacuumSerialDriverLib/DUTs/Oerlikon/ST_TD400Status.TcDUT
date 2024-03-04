@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
-  <DUT Name="ST_TD20Status" Id="{4114394e-9b7d-4381-aa92-5499001256f3}">
-    <Declaration><![CDATA[TYPE ST_TD20Status :  (* Serial communication defined in Oerlikon Leybold Manual 17200048 *)
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ST_TD400Status" Id="{60e77eec-6dbf-48b3-82d0-72d44ea60113}">
+    <Declaration><![CDATA[TYPE ST_TD400Status :  (* Serial communication defined in Oerlikon Leybold Manual 17200048 *)
 STRUCT
     /// Received Status Word
     wStatusWord: WORD;
@@ -29,18 +29,24 @@ STRUCT
     io: i;
     '}
     wConverterTemp_P11: WORD;
+    /// Maximum setpoint frequency
+    {attribute 'pytmc' := '
+    pv: MaxSetpoinFreq;
+    io: i;
+    '}
+    wMaxSetpointFreq_P18: WORD;
+    /// Minimum setpoint frequency
+    {attribute 'pytmc' := '
+    pv: MinSetpoinFreq;
+    io: i;
+    '}
+    wMinSetpointFreq_P19: WORD;
     /// Critical frequency
     {attribute 'pytmc' := '
     pv: CriticalFrequency;
     io: i;
     '}
     wCriticalFreq_P20: WORD;
-    /// Max. Current Factor
-    {attribute 'pytmc' := '
-    pv: MaxCurrentFactor;
-    io: i;
-    '}
-    wMaxCurrentFactor_P21: WORD;
     /// Setpoint Frequecy
     {attribute 'pytmc' := '
     pv: SetPointFreq;
