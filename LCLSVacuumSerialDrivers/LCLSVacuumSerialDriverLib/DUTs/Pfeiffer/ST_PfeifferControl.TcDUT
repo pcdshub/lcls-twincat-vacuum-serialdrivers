@@ -36,7 +36,7 @@ STRUCT
     xMotorPump_023: BOOL;
     {attribute 'pytmc' := '
     pv: GAS_MODE;
-    io: i0;
+    io: io;
     '}
     iGasMode_027: INT;
     /// interlock bit
