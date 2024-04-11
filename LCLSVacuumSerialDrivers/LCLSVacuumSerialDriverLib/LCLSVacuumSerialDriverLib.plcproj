@@ -43,6 +43,12 @@
     <Compile Include="DUTs\Oerlikon\ST_TD20Status.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Oerlikon\ST_TD400Control.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Oerlikon\ST_TD400Status.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Pfeiffer\ST_PfeifferControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -89,6 +95,21 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_OERLIKON_TD400_COM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_OERLIKON_TD400_TO_PTM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_TD400SerialDriver.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\FB_TD400Transaction.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial drivers\Pumps\Oerlikon TD400\F_CalcTD400Checksum.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Serial drivers\Pumps\Pfeiffer\FB_PfeifferSerialDriver.TcPOU">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -123,6 +144,7 @@
     <Folder Include="POUs\Serial drivers\LVDT" />
     <Folder Include="POUs\Serial drivers\LVDT\MacroSensors" />
     <Folder Include="POUs\Serial drivers\Pumps" />
+    <Folder Include="POUs\Serial drivers\Pumps\Oerlikon TD400" />
     <Folder Include="POUs\Serial drivers\Pumps\Oerlikon TD20" />
     <Folder Include="POUs\Serial drivers\Pumps\Pfeiffer" />
     <Folder Include="Version" />

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
-  <POU Name="FB_TD20Transaction" Id="{dc793f6b-3a75-40e6-8ecf-906118eaf6a9}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_TD20Transaction
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_TD400Transaction" Id="{b13d3f4b-702d-4036-a058-451e63b07b9c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TD400Transaction
 VAR_INPUT
     /// rising edge execute
     i_xExecute: BOOL;
@@ -164,7 +164,7 @@ CASE iStep OF
             iStep := 9000;
         ELSIF fbReceiveData.DataReceived THEN
             q_abLastReceivedArray := q_abResponseData;
-            bRXChecksum := F_CalcTD20Checksum(q_abResponseData);
+            bRXChecksum := F_CalcTD400Checksum(q_abResponseData);
             bRXAddress := q_abResponseData[2];
             MEMCPY(destAddr:=ADR(wTemp) , srcAddr:=ADR(q_abResponseData[3]), n:=2);
             q_wPKE := BE16_TO_HOST(wTemp);
@@ -217,10 +217,7 @@ CASE iStep OF
         q_wMotorCurrent_P5:= 0;
         q_wConverterTemp_P11:= 0;
         q_wPumpTemp_P127:= 0;
-        q_xError := TRUE;;
-
-
-
+        q_xError := TRUE;
 
 END_CASE]]></ST>
     </Implementation>
