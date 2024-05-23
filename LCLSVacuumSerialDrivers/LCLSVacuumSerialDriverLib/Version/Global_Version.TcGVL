@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
-  <GVL Name="Global_Version" Id="{87004486-76fa-454f-bb0d-f0bfdd2d465f}">
+<?xml version='1.0' encoding='UTF-8'?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <GVL Name="Global_Version" Id="{f757f888-2bdd-462c-ba79-93f7505eedaa}">
     <Declaration><![CDATA[{attribute 'TcGenerated'}
 {attribute 'no-analysis'}
 {attribute 'linkalways'}
 // This function has been automatically generated from the project information.
 VAR_GLOBAL CONSTANT
     {attribute 'const_non_replaced'}
-    stLibVersion_LCLSVacuumSerialDriverLib : ST_LibVersion := (iMajor := 0, iMinor := 0, iBuild := 0, iRevision := 0, nFlags := 0, sVersion := '0.0.0');
+    stLibVersion_LCLSVacuumSerialDriverLib : ST_LibVersion := (iMajor := 1, iMinor := 3, iBuild := 2, iRevision := 0, nFlags := 1, sVersion := '1.3.2');
 END_VAR
 ]]></Declaration>
   </GVL>
