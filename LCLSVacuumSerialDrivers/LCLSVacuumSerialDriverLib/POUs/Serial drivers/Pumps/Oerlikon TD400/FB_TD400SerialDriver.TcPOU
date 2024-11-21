@@ -8,7 +8,6 @@ VAR_INPUT
     /// Maximum wait time for reply
     i_tTimeOut: TIME := TIME#1s0ms;
     i_wControlWord: WORD;
-    i_stControl: ST_TD400Control;
 END_VAR
 VAR_OUTPUT
     q_xDone: BOOL;
@@ -24,6 +23,7 @@ END_VAR
 VAR_IN_OUT
     iq_stSerialRXBuffer: ComBuffer;
     iq_stSerialTXBuffer: ComBuffer;
+    iq_stControl: ST_TD400Control;
 END_VAR
 VAR
     rtExecute: R_TRIG;
@@ -34,16 +34,31 @@ VAR
     iCatch: INT;
     sTransactionErrMesg : STRING := 'In step %d fbTD20Transaction failed with message: %s';
     sDriverErrMesg		: STRING := 'In step %d FB_TD20SerialDriver failed with unexpected PKE reply: %X';
-    i : INT := 1;
-    bSetFreq :BOOL;
-    nOldSetSetpointFreq_P24: WORD;
+    bSetFreq : BOOL := FALSE; //flag to write to controller to set new frequency
+    nOldSetSetpointFreq_P24 : WORD; //local value for setpoint frequency parameter to compare with new value
+    bControlDisabled : BOOL := TRUE; //flag to enable setting frequency
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* This function block performs serial transactions with a Oerlikon TD20 Pump controller *)
-IF nOldSetSetpointFreq_P24 <> i_stControl.wSetSetpointFreq_P24 THEN
-    nOldSetSetpointFreq_P24 := i_stControl.wSetSetpointFreq_P24;
-    bSetFreq := TRUE;
+      <ST><![CDATA[(* This function block performs serial transactions with a Oerlikon TD400 Pump controller *)
+//Wait until all needed parameters received to enable control to set frequency
+IF q_stStatus.wMinSetpointFreq_P19 <> 0 AND q_stStatus.wMaxSetpointFreq_P18 <> 0 AND q_stStatus.wSetpointFreq_P24 <> 0 THEN
+    //On first pass update Set frequency parameter with value from controller
+    IF bControlDisabled THEN
+        iq_stControl.wSetSetpointFreq_P24 := q_stStatus.wSetpointFreq_P24;
+        nOldSetSetpointFreq_P24 := q_stStatus.wSetpointFreq_P24;
+        bControlDisabled := FALSE;
+        bSetFreq := FALSE;
+    ELSE
+        IF nOldSetSetpointFreq_P24 <> iq_stControl.wSetSetpointFreq_P24 THEN
+            nOldSetSetpointFreq_P24 := iq_stControl.wSetSetpointFreq_P24;
+            bSetFreq := TRUE;
+        END_IF
+    END_IF
+ELSE
+    iq_stControl.wSetSetpointFreq_P24 := q_stStatus.wSetpointFreq_P24;
+    bControlDisabled := TRUE;
+    bSetFreq := FALSE;
 END_IF
 
 (* rising edge trigger *)
@@ -89,7 +104,7 @@ CASE iStep OF
         IF bSetFreq THEN
             fbTD400Transaction.i_wPKE := 16#2000 OR 24;
             fbTD400Transaction.i_bIND := 0;
-            fbTD400Transaction.i_dwPWE := WORD_TO_DWORD(i_stControl.wSetSetpointFreq_P24);
+            fbTD400Transaction.i_dwPWE := WORD_TO_DWORD(iq_stControl.wSetSetpointFreq_P24);
             fbTD400Transaction.i_xExecute := TRUE;
 
             IF fbTD400Transaction.q_xError THEN

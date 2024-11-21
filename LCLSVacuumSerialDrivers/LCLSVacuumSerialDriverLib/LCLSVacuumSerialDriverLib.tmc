@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{E1198441-5431-9509-E120-6E54127D9951}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{7307B9F4-1A6C-3D06-F99C-F25D8F129B8B}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_Vacuum.LCLS_General">ST_System</Name>
@@ -822,31 +822,31 @@ These features aren't disabled, they just aren't used, think child/parent classe
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>79363904</GetCodeOffs>
+        <GetCodeOffs>79363976</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>79363976</GetCodeOffs>
+        <GetCodeOffs>79364048</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79363992</GetCodeOffs>
+        <GetCodeOffs>79364064</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79363952</GetCodeOffs>
+        <GetCodeOffs>79364024</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79363984</GetCodeOffs>
+        <GetCodeOffs>79364056</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -2085,15 +2085,15 @@ These features aren't disabled, they just aren't used, think child/parent classe
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79363784</GetCodeOffs>
-        <SetCodeOffs>79363832</SetCodeOffs>
+        <GetCodeOffs>79363856</GetCodeOffs>
+        <SetCodeOffs>79363904</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79363864</GetCodeOffs>
-        <SetCodeOffs>79363888</SetCodeOffs>
+        <GetCodeOffs>79363936</GetCodeOffs>
+        <SetCodeOffs>79363960</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>ExtendName</Name>
@@ -2339,37 +2339,37 @@ These features aren't disabled, they just aren't used, think child/parent classe
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>79364088</GetCodeOffs>
+        <GetCodeOffs>79364160</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_Vacuum.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>79364048</GetCodeOffs>
+        <GetCodeOffs>79364120</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79364224</GetCodeOffs>
+        <GetCodeOffs>79364296</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nUniqueId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>79364232</GetCodeOffs>
+        <GetCodeOffs>79364304</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79364144</GetCodeOffs>
+        <GetCodeOffs>79364216</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>79364240</GetCodeOffs>
+        <GetCodeOffs>79364312</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2968,7 +2968,7 @@ These features aren't disabled, they just aren't used, think child/parent classe
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>79364288</GetCodeOffs>
+        <GetCodeOffs>79364360</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -15206,7 +15206,7 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-04-10T14:52:16</Value>
+          <Value>2024-11-21T11:14:48</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
