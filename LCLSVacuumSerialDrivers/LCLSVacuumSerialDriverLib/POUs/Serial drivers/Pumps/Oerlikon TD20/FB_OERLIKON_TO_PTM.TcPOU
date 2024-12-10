@@ -17,7 +17,7 @@ iq_stPTM.i_xDecel := iq_stOerlikon_stat.wStatusWord.5;
 iq_stPTM.i_xAtSpd := iq_stOerlikon_stat.wStatusWord.10;
 iq_stPTM.q_xRemote := iq_stOerlikon_stat.wStatusWord.15; (* Remote control enabled *)
 iq_stPTM.i_diCurSpd := WORD_TO_DINT(iq_stOerlikon_stat.wFrequency_P3);
-iq_stPTM.i_diPwr := WORD_TO_DINT(iq_stOerlikon_stat.wMotorCurrent_P5 * iq_stOerlikon_stat.wVoltage_P4);
+iq_stPTM.i_diPwr := REAL_TO_DINT(WORD_TO_DINT(iq_stOerlikon_stat.wMotorCurrent_P5 * iq_stOerlikon_stat.wVoltage_P4)*0.01); (*Current in units 0.1 A and voltage in units 0.1V, TD20 manual page 23*)
 iq_stPTM.i_diElecTemp := WORD_TO_DINT(iq_stOerlikon_stat.wConverterTemp_P11);
 //iq_stPTM.i_diPumpTemp := WORD_TO_DINT(iq_stOerlikon_stat.wPumpTemp_P127);
 
